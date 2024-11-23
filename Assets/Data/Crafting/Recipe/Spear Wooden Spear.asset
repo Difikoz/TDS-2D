@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16e3873e9b9698f418d9efe14485705e, type: 3}
+  m_Name: Spear Wooden Spear
+  m_EditorClassIdentifier: 
+  _displayName: Wooden Spear
+  _textColor: {r: 1, g: 1, b: 1, a: 1}
+  _iconSprite: {fileID: 0}
+  _ingredients:
+  - _item: {fileID: 11400000, guid: 9fcf1c6840734114bb3e17aec9bfce1d, type: 2}
+    _amount: 1
+  - _item: {fileID: 11400000, guid: 28dee03c98e7a474db69127caa25df01, type: 2}
+    _amount: 1
+  _results:
+  - _item: {fileID: 11400000, guid: a2deb3a039daae2459a99e25d8aa804c, type: 2}
+    _amount: 1

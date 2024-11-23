@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e91ccb5ed6d7de64e83201284e2a4df3, type: 3}
+  m_Name: Boots Leather Boots
+  m_EditorClassIdentifier: 
+  _displayName: Leather Boots
+  _description: Description
+  _itemType: {fileID: 11400000, guid: 38c06f1d54c275c42aa6748947e40265, type: 2}
+  _usedByRecipes: []
+  _iconSprite: {fileID: 0}
+  _lootSprite: {fileID: 0}
+  _cost: 500
+  _size: 2
+  _weight: 2
+  _armorType: {fileID: 11400000, guid: fd922dd0ab4c450428bb5c9cbd031bb7, type: 2}
+  _equippedSprite: {fileID: 0}
+  _resistance: []
