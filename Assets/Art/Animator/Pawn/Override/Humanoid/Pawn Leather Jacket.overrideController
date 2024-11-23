@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Pawn Leather Jacket
+  m_Controller: {fileID: 9100000, guid: 1bc766fdd699d0745ba6394e3b0d9989, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: beed04a2507951b4da30deee70a59684, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9de24bf43ced0094bb8bc017f8cc727f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 35ca0f618aec6e9498d69aef96863966, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a38b659a9a0f8034d896a1f0a25783a6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: cf96adaa9b3fbf747b513528e6608d98, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 648da714cc802614085e24c641c6d111, type: 2}

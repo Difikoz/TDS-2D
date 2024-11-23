@@ -17,8 +17,19 @@ namespace WinterUniverse
             _rb = GetComponent<Rigidbody2D>();
         }
 
+        public void Deinitialize()
+        {
+
+        }
+
         public void OnFixedUpdate()
         {
+            if (_pawn.IsDead)
+            {
+                _moveVelocity = Vector2.zero;
+                _rb.linearVelocity = Vector2.zero;
+                return;
+            }
             if (_pawn.MoveDirection != Vector2.zero)
             {
                 _moveVelocity = Vector2.MoveTowards(_moveVelocity, _pawn.MoveDirection * _pawn.MoveSpeed, _pawn.Acceleration * Time.fixedDeltaTime);

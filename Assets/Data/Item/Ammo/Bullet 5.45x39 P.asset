@@ -22,6 +22,8 @@ MonoBehaviour:
   _size: 0.1
   _weight: 0.1
   _ammoType: {fileID: 11400000, guid: 3f65686f764786e40ab8f519b5c4c9eb, type: 2}
+  _projectilePrefab: {fileID: 5623899012383722650, guid: a629ac506664cbf4f8da312276cac67c, type: 3}
   _damageMultiplier: 0.75
   _forceMultiplier: 0.75
+  _knockbackMultiplier: 1
   _pierceCount: 1

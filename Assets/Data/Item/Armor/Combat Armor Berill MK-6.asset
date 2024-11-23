@@ -9,18 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e91ccb5ed6d7de64e83201284e2a4df3, type: 3}
-  m_Name: Helmet Gas Mask
+  m_Script: {fileID: 11500000, guid: 6f41e8d1973adf64399c0e3e43cc2363, type: 3}
+  m_Name: Combat Armor Berill MK-6
   m_EditorClassIdentifier: 
-  _displayName: Gas Mask
+  _displayName: Berill MK-6
   _description: Description
   _itemType: {fileID: 11400000, guid: 38c06f1d54c275c42aa6748947e40265, type: 2}
   _usedByRecipes: []
-  _iconSprite: {fileID: 0}
+  _iconSprite: {fileID: 3723399090515337254, guid: 4f2551a623650f74f81bd07c8a170d8d, type: 3}
   _lootSprite: {fileID: 0}
-  _cost: 500
-  _size: 2
-  _weight: 2
-  _armorType: {fileID: 11400000, guid: e0e62ec1feadf9040891986df8aedcc8, type: 2}
+  _cost: 100
+  _size: 1
+  _weight: 1
+  _armorType: {fileID: 11400000, guid: c75afdcac1078df4fb91d6861615a658, type: 2}
   _equippedSprite: {fileID: 0}
   _resistance: []

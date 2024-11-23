@@ -27,11 +27,17 @@ MonoBehaviour:
   _damage: 10
   _fireRate: 60
   _range: 25
-  _consumeAmmo: 1
+  _reloadTime: 2
+  _consumeAmmoByShot: 1
+  _consumeAmmoByProjectile: 0
+  _consumeAmmoByReload: 1
   _usingAmmo:
   - {fileID: 11400000, guid: 5fed5dd7487abaa45b9240d67744d51d, type: 2}
   - {fileID: 11400000, guid: f8657cbc8f546cc49882e556da0d9906, type: 2}
   - {fileID: 11400000, guid: 77120b1bfc6cee342809610624387a2f, type: 2}
-  _bulletPerShot: 1
-  _bulletForce: 25
-  _bulletSpread: 5
+  _magSize: 30
+  _projectilePerShot: 1
+  _projectileDelay: 0.01
+  _projectileForce: 25
+  _projectileKnockback: 2
+  _projectileSpread: 5

@@ -14,6 +14,11 @@ namespace WinterUniverse
             _pawn = GetComponent<PawnController>();
         }
 
+        public void Deinitialize()
+        {
+            
+        }
+
         public void SetTarget(PawnController target)
         {
             if (target != null)

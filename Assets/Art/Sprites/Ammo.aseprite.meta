@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4f2551a623650f74f81bd07c8a170d8d
+guid: 219e0bd838c71164e9154c2bf4c0e54e
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 32
+    spritePixelsToUnits: 128
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 0
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638679899061305686
+  platformSettingsDirtyTick: 638680070016353401
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -122,7 +122,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Human
+  - name: Bullet Rifle
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
@@ -132,9 +132,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 24
-      height: 32
-    spriteID: 0ac4f3cd3c2536d4c9d927ec408472ac
+      width: 14
+      height: 8
+    spriteID: 9bbabe053c357fe4bb974fbc8b0ec116
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -146,21 +146,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 689993863
-    name: Human
+    guid: -335512088
+    name: Bullet Rifle
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: Human
+    - name: Bullet Rifle
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 20
-        y: 16
-        width: 24
-        height: 32
-      spriteId: 0ac4f3cd3c2536d4c9d927ec408472ac
+        x: 25
+        y: 28
+        width: 14
+        height: 8
+      spriteId: 9bbabe053c357fe4bb974fbc8b0ec116
     linkedCells: []
     parentIndex: -1
   platformSettings:

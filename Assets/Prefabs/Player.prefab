@@ -146,7 +146,7 @@ Animator:
   m_GameObject: {fileID: 8587263741163189520}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 51dd5021b78b7e548a9508ce87e2b91b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -232,7 +232,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 402511887666651004, guid: b431237f82ad3e647bb519eba2d5f668, type: 3}
       propertyPath: m_Name
-      value: Armor Slots
+      value: Armor Slot
       objectReference: {fileID: 0}
     - target: {fileID: 2873671592569007427, guid: b431237f82ad3e647bb519eba2d5f668, type: 3}
       propertyPath: m_LocalPosition.x
@@ -298,11 +298,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6773878028388234964, guid: 8dbc2c1570d799540b4a3ce59b24fec9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6773878028388234964, guid: 8dbc2c1570d799540b4a3ce59b24fec9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6773878028388234964, guid: 8dbc2c1570d799540b4a3ce59b24fec9, type: 3}
       propertyPath: m_LocalPosition.z

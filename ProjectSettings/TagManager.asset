@@ -39,8 +39,14 @@ TagManager:
   - 
   - WorldSpaceUI
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 3036123229
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Roof
+    uniqueID: 4078710415
     locked: 0
   m_RenderingLayers:
   - Default

@@ -1,26 +1,30 @@
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 namespace WinterUniverse
 {
     public class PawnEquipment : MonoBehaviour
     {
+        public Action OnEquipmentChanged;
+
         private PawnController _pawn;
         private WeaponSlot _weaponSlot;
-        private List<ArmorSlot> _armorSlots = new();
+        private ArmorSlot _armorSlot;
 
         public WeaponSlot WeaponSlot => _weaponSlot;
-        public List<ArmorSlot> ArmorSlots => _armorSlots;
+        public ArmorSlot ArmorSlot => _armorSlot;
 
         public void Initialize()
         {
             _pawn = GetComponent<PawnController>();
             _weaponSlot = GetComponentInChildren<WeaponSlot>();
-            ArmorSlot[] armorSlots = GetComponentsInChildren<ArmorSlot>();
-            foreach (ArmorSlot slot in armorSlots)
-            {
-                _armorSlots.Add(slot);
-            }
+            _armorSlot = GetComponentInChildren<ArmorSlot>();
+            _pawn.OnDeath += DropWeapon;
+        }
+
+        public void Deinitialize()
+        {
+            _pawn.OnDeath -= DropWeapon;
         }
 
         public void EquipWeapon(WeaponItemData data, bool removeNewFromInventory = true, bool addOldToInventory = true)
@@ -29,7 +33,7 @@ namespace WinterUniverse
             {
                 //remove new
             }
-            if (_weaponSlot.Data != null)
+            if (_weaponSlot.WeaponData != null)
             {
                 if (addOldToInventory)
                 {
@@ -39,12 +43,12 @@ namespace WinterUniverse
             }
             _weaponSlot.Setup(data);
             //add stats
-            //OnChanged
+            OnEquipmentChanged?.Invoke();
         }
 
         public void UnequipWeapon(bool addOldToInventory)
         {
-            if (_weaponSlot.Data != null)
+            if (_weaponSlot.WeaponData != null)
             {
                 if (addOldToInventory)
                 {
@@ -52,53 +56,52 @@ namespace WinterUniverse
                 }
                 //remove stats
                 _weaponSlot.Setup(null);
-                //OnChanged
+                OnEquipmentChanged?.Invoke();
+            }
+        }
+
+        public void DropWeapon()
+        {
+            if (_weaponSlot.WeaponData != null)
+            {
+                //remove stats
+                //drop
+                // or add to inventory and drop throw inventory
+                _weaponSlot.Setup(null);
+                OnEquipmentChanged?.Invoke();
             }
         }
 
         public void EquipArmor(ArmorItemData data, bool removeOldFromInventory = true, bool addOldToInventory = true)
         {
-            foreach (ArmorSlot slot in _armorSlots)
+            if (removeOldFromInventory)
             {
-                if (slot.ArmorType == data.ArmorType)
-                {
-                    if (removeOldFromInventory)
-                    {
-                        //remove new
-                    }
-                    if (slot.Data != null)
-                    {
-                        if (addOldToInventory)
-                        {
-                            //add old
-                        }
-                        // remove stats
-                    }
-                    slot.Setup(data);
-                    //add stats
-                    //OnChanged
-                    break;
-                }
+                //remove new
             }
+            if (_armorSlot.Data != null)
+            {
+                if (addOldToInventory)
+                {
+                    //add old
+                }
+                //remove stats
+            }
+            _armorSlot.Setup(data);
+            //add stats
+            OnEquipmentChanged?.Invoke();
         }
 
-        public void UnequipArmor(ArmorTypeData type, bool addOldToInventory = true)
+        public void UnequipArmor(bool addOldToInventory = true)
         {
-            foreach (ArmorSlot slot in _armorSlots)
+            if (_armorSlot.Data != null)
             {
-                if (slot.ArmorType == type)
+                if (addOldToInventory)
                 {
-                    if (slot.Data != null)
-                    {
-                        if (addOldToInventory)
-                        {
-                            //add old
-                        }
-                        //remove stats
-                        slot.Setup(null);
-                    }
-                    break;
+                    //add old
                 }
+                //remove stats
+                _armorSlot.Setup(null);
+                OnEquipmentChanged?.Invoke();
             }
         }
     }

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee112074483a8b84a9132cae722c170c, type: 3}
   m_Name: Armor
   m_EditorClassIdentifier: 
-  _displayName: Armor
+  _displayName: Equipment
   _textColor: {r: 1, g: 1, b: 1, a: 1}
   _iconSprite: {fileID: 0}

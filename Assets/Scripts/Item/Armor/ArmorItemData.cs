@@ -7,11 +7,11 @@ namespace WinterUniverse
     public class ArmorItemData : ItemData
     {
         [SerializeField] private ArmorTypeData _armorType;
-        [SerializeField] private Sprite _equippedSprite;
+        [SerializeField] private AnimatorOverrideController _controller;
         [SerializeField] private List<float> _resistance = new();
 
         public ArmorTypeData ArmorType => _armorType;
-        public Sprite EquippedSprite => _equippedSprite;
+        public AnimatorOverrideController Controller => _controller;
         public List<float> Resistance => _resistance;
     }
 }

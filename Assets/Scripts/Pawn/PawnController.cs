@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 namespace WinterUniverse
@@ -8,17 +10,22 @@ namespace WinterUniverse
     [RequireComponent(typeof(PawnLocomotion))]
     public abstract class PawnController : MonoBehaviour
     {
+        public Action OnDeath;
+
         protected PawnAnimator _pawnAnimator;
         protected PawnCombat _pawnCombat;
         protected PawnEquipment _pawnEquipment;
         protected PawnLocomotion _pawnLocomotion;
         protected Vector2 _moveDirection;
         protected Vector2 _lookDirection;
+        protected bool _isDead;
 
         [SerializeField] private float _acceleration = 8f;
         [SerializeField] private float _deceleration = 16f;
         [SerializeField] private float _moveSpeed = 4f;
         [SerializeField] private float _rotateSpeed = 180f;
+        [SerializeField] private float _healthMax = 100f;
+        [SerializeField] private float _energyMax = 100f;
 
         public PawnAnimator PawnAnimator => _pawnAnimator;
         public PawnCombat PawnCombat => _pawnCombat;
@@ -26,10 +33,13 @@ namespace WinterUniverse
         public PawnLocomotion PawnLocomotion => _pawnLocomotion;
         public Vector2 MoveDirection => _moveDirection;
         public Vector2 LookDirection => _lookDirection;
+        public bool IsDead => _isDead;
         public float Acceleration => _acceleration;
         public float Deceleration => _deceleration;
         public float MoveSpeed => _moveSpeed;
         public float RotateSpeed => _rotateSpeed;
+        public float HealthMax => _healthMax;
+        public float EnergyMax => _energyMax;
 
         private void Awake()
         {
@@ -53,9 +63,36 @@ namespace WinterUniverse
             _pawnLocomotion.Initialize();
         }
 
+        protected virtual void DeinitializeComponents()
+        {
+            _pawnAnimator.Deinitialize();
+            _pawnCombat.Deinitialize();
+            _pawnEquipment.Deinitialize();
+            _pawnLocomotion.Deinitialize();
+        }
+
         protected virtual void FixedUpdate()
         {
             _pawnLocomotion.OnFixedUpdate();
+        }
+
+        public void PerformDeath()
+        {
+            if (_isDead)
+            {
+                return;
+            }
+            _isDead = true;
+            OnDeath?.Invoke();
+            StartCoroutine(ProcessDeath());
+        }
+
+        protected virtual IEnumerator ProcessDeath()
+        {
+            yield return new WaitForSeconds(5f);
+            DeinitializeComponents();
+            yield return null;
+            Destroy(gameObject);
         }
     }
 }
