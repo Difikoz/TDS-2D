@@ -8,5 +8,10 @@ namespace WinterUniverse
         [SerializeField] private ResourceTypeData _resourceType;
 
         public ResourceTypeData ResourceType => _resourceType;
+
+        public override bool OnUse(PawnController pawn, bool fromInventory = true)
+        {
+            return false;
+        }
     }
 }

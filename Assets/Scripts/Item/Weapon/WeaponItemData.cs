@@ -41,5 +41,11 @@ namespace WinterUniverse
         public float ProjectileForce => _projectileForce;
         public float ProjectileKnockback => _projectileKnockback;
         public float ProjectileSpread => _projectileSpread;
+
+        public override bool OnUse(PawnController pawn, bool fromInventory = true)
+        {
+            pawn.PawnEquipment.EquipWeapon(this, fromInventory);
+            return true;
+        }
     }
 }

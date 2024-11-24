@@ -13,5 +13,11 @@ namespace WinterUniverse
         public ArmorTypeData ArmorType => _armorType;
         public AnimatorOverrideController Controller => _controller;
         public List<float> Resistance => _resistance;
+
+        public override bool OnUse(PawnController pawn, bool fromInventory = true)
+        {
+            pawn.PawnEquipment.EquipArmor(this, fromInventory);
+            return true;
+        }
     }
 }

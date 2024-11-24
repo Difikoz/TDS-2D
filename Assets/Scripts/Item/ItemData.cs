@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace WinterUniverse
 {
-    public class ItemData : ScriptableObject
+    public abstract class ItemData : ScriptableObject
     {
         [SerializeField] private string _displayName = "Name";
         [SerializeField, TextArea] private string _description = "Description";
@@ -12,7 +12,7 @@ namespace WinterUniverse
         [SerializeField] private Sprite _iconSprite;
         [SerializeField] private Sprite _lootSprite;
         [SerializeField] private List<float> _usedByRecipes = new();
-        [SerializeField] private int _cost = 100;
+        [SerializeField] private int _price = 100;
         [SerializeField] private float _size = 1f;
         [SerializeField] private float _weight = 1f;
 
@@ -23,8 +23,10 @@ namespace WinterUniverse
         public Sprite IconSprite => _iconSprite;
         public Sprite LootSprite => _lootSprite;
         public List<float> UsedByRecipes => _usedByRecipes;
-        public int Cost => _cost;
+        public int Price => _price;
         public float Size => _size;
         public float Weight => _weight;
+
+        public abstract bool OnUse(PawnController pawn, bool fromInventory = true);
     }
 }

@@ -9,6 +9,7 @@ namespace WinterUniverse
         public Transform InteractionPoint => _interactionPoint;
 
         public abstract string GetText();
-        public abstract void Interact(PawnController pawn);
+        public abstract void PrimaryInteraction(PawnController pawn);
+        public abstract void SecondaryInteraction(PawnController pawn);
     }
 }

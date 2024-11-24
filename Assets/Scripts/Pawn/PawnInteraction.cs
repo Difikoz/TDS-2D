@@ -42,11 +42,21 @@ namespace WinterUniverse
             }
         }
 
-        public void Interact()
+        public void PrimaryInteract()
         {
             if (_interactable != null)
             {
-                _interactable.Interact(_pawn);
+                _interactable.PrimaryInteraction(_pawn);
+                _interactable = null;
+                OnInteractableChanged?.Invoke(null);
+            }
+        }
+
+        public void SecondaryInteract()
+        {
+            if (_interactable != null)
+            {
+                _interactable.SecondaryInteraction(_pawn);
                 _interactable = null;
                 OnInteractableChanged?.Invoke(null);
             }

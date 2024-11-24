@@ -11,5 +11,15 @@ namespace WinterUniverse
 
         public ConsumableTypeData ConsumableType => _consumableType;
         public List<float> Effects => _effects;
+
+        public override bool OnUse(PawnController pawn, bool fromInventory = true)
+        {
+            if (fromInventory)
+            {
+                pawn.PawnInventory.RemoveItem(this);
+            }
+            // apply effects
+            return true;
+        }
     }
 }

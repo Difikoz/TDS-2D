@@ -18,9 +18,14 @@ namespace WinterUniverse
             _lookInput = value.Get<Vector2>();
         }
 
-        public void OnInteract()
+        public void OnPrimaryInteraction()
         {
-            _pawnInteraction.Interact();
+            _pawnInteraction.PrimaryInteract();
+        }
+
+        public void OnSecondaryInteraction()
+        {
+            _pawnInteraction.SecondaryInteract();
         }
 
         protected override void FixedUpdate()

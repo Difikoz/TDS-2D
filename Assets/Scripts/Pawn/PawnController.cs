@@ -8,6 +8,7 @@ namespace WinterUniverse
     [RequireComponent(typeof(PawnCombat))]
     [RequireComponent(typeof(PawnEquipment))]
     [RequireComponent(typeof(PawnInteraction))]
+    [RequireComponent(typeof(PawnInventory))]
     [RequireComponent(typeof(PawnLocomotion))]
     public abstract class PawnController : MonoBehaviour
     {
@@ -17,6 +18,7 @@ namespace WinterUniverse
         protected PawnCombat _pawnCombat;
         protected PawnEquipment _pawnEquipment;
         protected PawnInteraction _pawnInteraction;
+        protected PawnInventory _pawnInventory;
         protected PawnLocomotion _pawnLocomotion;
         protected Vector2 _moveDirection;
         protected Vector2 _lookDirection;
@@ -33,6 +35,7 @@ namespace WinterUniverse
         public PawnCombat PawnCombat => _pawnCombat;
         public PawnEquipment PawnEquipment => _pawnEquipment;
         public PawnInteraction PawnInteraction => _pawnInteraction;
+        public PawnInventory PawnInventory => _pawnInventory;
         public PawnLocomotion PawnLocomotion => _pawnLocomotion;
         public Vector2 MoveDirection => _moveDirection;
         public Vector2 LookDirection => _lookDirection;
@@ -56,6 +59,7 @@ namespace WinterUniverse
             _pawnCombat = GetComponent<PawnCombat>();
             _pawnEquipment = GetComponent<PawnEquipment>();
             _pawnInteraction = GetComponent<PawnInteraction>();
+            _pawnInventory = GetComponent<PawnInventory>();
             _pawnLocomotion = GetComponent<PawnLocomotion>();
         }
 
@@ -65,6 +69,7 @@ namespace WinterUniverse
             _pawnCombat.Initialize();
             _pawnEquipment.Initialize();
             _pawnInteraction.Initialize();
+            _pawnInventory.Initialize();
             _pawnLocomotion.Initialize();
         }
 
@@ -74,6 +79,7 @@ namespace WinterUniverse
             _pawnCombat.Deinitialize();
             _pawnEquipment.Deinitialize();
             _pawnInteraction.Deinitialize();
+            _pawnInventory.Deinitialize();
             _pawnLocomotion.Deinitialize();
         }
 

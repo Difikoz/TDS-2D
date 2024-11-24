@@ -8,27 +8,37 @@ namespace WinterUniverse
         [SerializeField] private SpriteRenderer _spriteRenderer;
         [SerializeField] private Transform _shootPoint;
 
+        private PawnController _pawn;
         private WeaponItemData _weaponData;
         private AmmoItemData _ammoData;
         private float _spread;
         private int _ammoInMag;
+        private int _ammoInInventory;
+        private int _ammoDif;
         private bool _isFiring;
         private bool _isReloading;
 
         public WeaponItemData WeaponData => _weaponData;
         public AmmoItemData AmmoData => _ammoData;
 
+        public void Initialize()
+        {
+            _pawn = GetComponentInParent<PawnController>();
+        }
+
         public void Setup(WeaponItemData data)
         {
             if (data != null)
             {
                 _weaponData = data;
+                _ammoData = _weaponData.UsingAmmo[0];
                 _spriteRenderer.sprite = _weaponData.EquippedSprite;
                 _shootPoint.localPosition = _weaponData.ShootPointOffset;
             }
             else
             {
                 _weaponData = null;
+                _ammoData = null;
                 _spriteRenderer.sprite = null;
                 _shootPoint.localPosition = Vector3.zero;
             }
@@ -39,19 +49,16 @@ namespace WinterUniverse
 
         public void Fire()
         {
-            if (_isFiring)
+            if (_isFiring || _isReloading || _weaponData == null)
             {
                 return;
             }
-            if (_isReloading)
+            if (_ammoData == null)
             {
+                ChangeAmmo();
                 return;
             }
-            if (_weaponData == null)
-            {
-                return;
-            }
-            if (_ammoData == null || _ammoInMag == 0)
+            if (_ammoInMag == 0)
             {
                 Reload();
                 return;
@@ -87,23 +94,24 @@ namespace WinterUniverse
 
         public void Reload()
         {
-            if (_isFiring)
+            if (_isFiring || _isReloading || _weaponData == null)
             {
                 return;
             }
-            if (_isReloading)
+            if (_ammoData == null)
             {
+                ChangeAmmo();
                 return;
             }
-            if (!_weaponData.ConsumeAmmoByReload)//|| have current ammo in inventory
+            _ammoInInventory = _pawn.PawnInventory.AmountOfItem(_ammoData);
+            if (!_weaponData.ConsumeAmmoByReload || _ammoInInventory > 0)
             {
                 _isReloading = true;
                 StartCoroutine(ReloadAction());
             }
             else
             {
-                // check for other ammo
-                // if has Reload();
+                ChangeAmmo();
             }
         }
 
@@ -112,16 +120,50 @@ namespace WinterUniverse
             yield return new WaitForSeconds(_weaponData.ReloadTime);
             if (_weaponData.ConsumeAmmoByReload)
             {
-                // calculate ammo diff
-                // if in inventory less, than ammo diff = inventory count
-                // remove from inventory
-                // add to _ammoInMag
+                _ammoDif = _weaponData.MagSize - _ammoInMag;
+                _ammoInInventory = _pawn.PawnInventory.AmountOfItem(_ammoData);
+                if (_ammoDif > _ammoInInventory)
+                {
+                    _ammoDif = _ammoInInventory;
+                }
+                _pawn.PawnInventory.RemoveItem(_ammoData, _ammoDif);
+                _ammoInMag += _ammoDif;
+                _ammoInInventory = _pawn.PawnInventory.AmountOfItem(_ammoData);
             }
             else
             {
                 _ammoInMag = _weaponData.MagSize;
             }
             _isReloading = false;
+        }
+
+        public void ChangeAmmo()
+        {
+            if (_pawn.PawnInventory.GetAmmo(_weaponData, out AmmoItemData ammo))
+            {
+                ChangeAmmo(ammo);
+            }
+        }
+
+        public void ChangeAmmo(AmmoItemData ammo)
+        {
+            Discharge();
+            _ammoData = ammo;
+            Reload();
+        }
+
+        public void Discharge()
+        {
+            if (_isFiring || _isReloading || _weaponData == null || _ammoData == null)
+            {
+                return;
+            }
+            if (_weaponData.ConsumeAmmoByReload && _ammoInMag > 0)
+            {
+                _pawn.PawnInventory.AddItem(_ammoData, _ammoInMag);
+            }
+            _ammoData = null;
+            _ammoInMag = 0;
         }
     }
 }

@@ -6,9 +6,15 @@ namespace WinterUniverse
     {
         [SerializeField] private SpriteRenderer _spriteRenderer;
 
+        private PawnController _pawn;
         private ArmorItemData _data;
 
         public ArmorItemData Data => _data;
+
+        public void Initialize()
+        {
+            _pawn = GetComponentInParent<PawnController>();
+        }
 
         public void Setup(ArmorItemData data)
         {

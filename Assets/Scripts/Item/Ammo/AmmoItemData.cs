@@ -18,5 +18,15 @@ namespace WinterUniverse
         public float ForceMultiplier => _forceMultiplier;
         public float KnockbackMultiplier => _knockbackMultiplier;
         public int PierceCount => _pierceCount;
+
+        public override bool OnUse(PawnController pawn, bool fromInventory = true)
+        {
+            if (!fromInventory)
+            {
+                return false;
+            }
+            pawn.PawnEquipment.WeaponSlot.ChangeAmmo(this);
+            return true;
+        }
     }
 }

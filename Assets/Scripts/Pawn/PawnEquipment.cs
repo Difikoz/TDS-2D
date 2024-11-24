@@ -19,6 +19,8 @@ namespace WinterUniverse
             _pawn = GetComponent<PawnController>();
             _weaponSlot = GetComponentInChildren<WeaponSlot>();
             _armorSlot = GetComponentInChildren<ArmorSlot>();
+            _weaponSlot.Initialize();
+            _armorSlot.Initialize();
             _pawn.OnDeath += DropWeapon;
         }
 

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3248924954537771022}
   - component: {fileID: 100693221061181059}
   - component: {fileID: 6943283713983632168}
+  - component: {fileID: 3655221451110307178}
   - component: {fileID: 7037973238891215700}
   - component: {fileID: 1641111121866719651}
   - component: {fileID: 8169694763752610105}
@@ -58,7 +59,7 @@ MonoBehaviour:
   _acceleration: 8
   _deceleration: 16
   _moveSpeed: 4
-  _rotateSpeed: 180
+  _rotateSpeed: 360
   _healthMax: 100
   _energyMax: 100
 --- !u!114 &6841194008028849649
@@ -73,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6640f7d59b7ee13428b7df721e7e94f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _testDefaultController: {fileID: 0}
+  _testDefaultController: {fileID: 22100000, guid: 51dd5021b78b7e548a9508ce87e2b91b, type: 2}
 --- !u!114 &3248924954537771022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +115,18 @@ MonoBehaviour:
   _interactableMask:
     serializedVersion: 2
     m_Bits: 65
+--- !u!114 &3655221451110307178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8587263741163189520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d77a6caebe44143a446e455146d646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7037973238891215700
 MonoBehaviour:
   m_ObjectHideFlags: 0
