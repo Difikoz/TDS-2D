@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _displayName: AK-47
   _description: Description
+  _rarity: {fileID: 11400000, guid: 275b36ab6aedbb14184c17187502aa55, type: 2}
   _itemType: {fileID: 11400000, guid: eb80e55bb7906544786ae967581d307a, type: 2}
-  _usedByRecipes: []
   _iconSprite: {fileID: 7531406297805789275, guid: 464bbdd73de8700448de2f288404a497, type: 3}
   _lootSprite: {fileID: 7531406297805789275, guid: 464bbdd73de8700448de2f288404a497, type: 3}
+  _usedByRecipes: []
   _cost: 100
   _size: 1
   _weight: 1

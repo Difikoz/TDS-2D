@@ -18,6 +18,11 @@ namespace WinterUniverse
             _lookInput = value.Get<Vector2>();
         }
 
+        public void OnInteract()
+        {
+            _pawnInteraction.Interact();
+        }
+
         protected override void FixedUpdate()
         {
             _moveDirection = _moveInput;

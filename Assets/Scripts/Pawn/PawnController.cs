@@ -7,6 +7,7 @@ namespace WinterUniverse
     [RequireComponent(typeof(PawnAnimator))]
     [RequireComponent(typeof(PawnCombat))]
     [RequireComponent(typeof(PawnEquipment))]
+    [RequireComponent(typeof(PawnInteraction))]
     [RequireComponent(typeof(PawnLocomotion))]
     public abstract class PawnController : MonoBehaviour
     {
@@ -15,6 +16,7 @@ namespace WinterUniverse
         protected PawnAnimator _pawnAnimator;
         protected PawnCombat _pawnCombat;
         protected PawnEquipment _pawnEquipment;
+        protected PawnInteraction _pawnInteraction;
         protected PawnLocomotion _pawnLocomotion;
         protected Vector2 _moveDirection;
         protected Vector2 _lookDirection;
@@ -30,6 +32,7 @@ namespace WinterUniverse
         public PawnAnimator PawnAnimator => _pawnAnimator;
         public PawnCombat PawnCombat => _pawnCombat;
         public PawnEquipment PawnEquipment => _pawnEquipment;
+        public PawnInteraction PawnInteraction => _pawnInteraction;
         public PawnLocomotion PawnLocomotion => _pawnLocomotion;
         public Vector2 MoveDirection => _moveDirection;
         public Vector2 LookDirection => _lookDirection;
@@ -52,6 +55,7 @@ namespace WinterUniverse
             _pawnAnimator = GetComponent<PawnAnimator>();
             _pawnCombat = GetComponent<PawnCombat>();
             _pawnEquipment = GetComponent<PawnEquipment>();
+            _pawnInteraction = GetComponent<PawnInteraction>();
             _pawnLocomotion = GetComponent<PawnLocomotion>();
         }
 
@@ -60,6 +64,7 @@ namespace WinterUniverse
             _pawnAnimator.Initialize();
             _pawnCombat.Initialize();
             _pawnEquipment.Initialize();
+            _pawnInteraction.Initialize();
             _pawnLocomotion.Initialize();
         }
 
@@ -68,11 +73,13 @@ namespace WinterUniverse
             _pawnAnimator.Deinitialize();
             _pawnCombat.Deinitialize();
             _pawnEquipment.Deinitialize();
+            _pawnInteraction.Deinitialize();
             _pawnLocomotion.Deinitialize();
         }
 
         protected virtual void FixedUpdate()
         {
+            _pawnInteraction.OnFixedUpdate();
             _pawnLocomotion.OnFixedUpdate();
         }
 

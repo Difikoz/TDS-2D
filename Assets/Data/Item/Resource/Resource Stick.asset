@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _displayName: Stick
   _description: Description
+  _rarity: {fileID: 11400000, guid: d4043a874eac7d749afde86eccd381ef, type: 2}
   _itemType: {fileID: 11400000, guid: ee4326aeb40923244bd870292cbe4842, type: 2}
-  _usedByRecipes: []
   _iconSprite: {fileID: 0}
   _lootSprite: {fileID: 0}
+  _usedByRecipes: []
   _cost: 1
   _size: 1
   _weight: 1
