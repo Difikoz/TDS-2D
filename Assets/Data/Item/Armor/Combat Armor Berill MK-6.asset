@@ -17,11 +17,11 @@ MonoBehaviour:
   _rarity: {fileID: 11400000, guid: 264b951bfb8d43948a67ee3f27809120, type: 2}
   _itemType: {fileID: 11400000, guid: 38c06f1d54c275c42aa6748947e40265, type: 2}
   _iconSprite: {fileID: 3723399090515337254, guid: 4f2551a623650f74f81bd07c8a170d8d, type: 3}
-  _lootSprite: {fileID: 0}
+  _lootSprite: {fileID: 3723399090515337254, guid: 4f2551a623650f74f81bd07c8a170d8d, type: 3}
   _usedByRecipes: []
-  _cost: 100
+  _price: 100
   _size: 1
   _weight: 1
   _armorType: {fileID: 11400000, guid: c75afdcac1078df4fb91d6861615a658, type: 2}
-  _controller: {fileID: 0}
+  _controller: {fileID: 22100000, guid: 51dd5021b78b7e548a9508ce87e2b91b, type: 2}
   _resistance: []

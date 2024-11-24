@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _displayName: Rocket
   _textColor: {r: 1, g: 1, b: 1, a: 1}
-  _iconSprite: {fileID: 0}
+  _iconSprite: {fileID: -8484830862554686089, guid: 219e0bd838c71164e9154c2bf4c0e54e, type: 3}

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e5fe2c3d255efee49a62187e6b2b5896
+guid: c11f9f2429d781b44a238bc6516a417d
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -122,9 +122,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Ammo 5.45x39
+  - name: Bread
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.44444445}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -133,8 +133,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 16
-      height: 8
-    spriteID: 0cb8a90acb8e69c4194653cbf2f07f41
+      height: 9
+    spriteID: 892a688c9dabe564cb72b0ee4ed41e81
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -146,21 +146,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1532646892
-    name: Ammo 5.45x39
+    guid: -1901935004
+    name: Bread
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: Ammo 5.45x39
+    - name: Bread
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 24
         y: 28
         width: 16
-        height: 8
-      spriteId: 0cb8a90acb8e69c4194653cbf2f07f41
+        height: 9
+      spriteId: 892a688c9dabe564cb72b0ee4ed41e81
     linkedCells: []
     parentIndex: -1
   platformSettings:

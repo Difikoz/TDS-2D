@@ -20,10 +20,13 @@ namespace WinterUniverse
 
         public WeaponItemData WeaponData => _weaponData;
         public AmmoItemData AmmoData => _ammoData;
+        public int AmmoInMag => _ammoInMag;
 
         public void Initialize()
         {
             _pawn = GetComponentInParent<PawnController>();
+            _isFiring = false;
+            _isReloading = false;
         }
 
         public void Setup(WeaponItemData data)
@@ -49,7 +52,7 @@ namespace WinterUniverse
 
         public void Fire()
         {
-            if (_isFiring || _isReloading || _weaponData == null)
+            if (_pawn.IsDead || _isFiring || _isReloading || _weaponData == null)
             {
                 return;
             }
@@ -77,7 +80,7 @@ namespace WinterUniverse
             for (int i = 0; i < _weaponData.ProjectilePerShot; i++)
             {
                 _spread = _shootPoint.eulerAngles.z + Random.Range(-_weaponData.ProjectileSpread, _weaponData.ProjectileSpread);
-                Instantiate(_ammoData.ProjectilePrefab, _shootPoint.position, Quaternion.Euler(0f, 0f, _spread)).GetComponent<Projectile>().Launch(_weaponData, _ammoData);
+                Instantiate(_ammoData.ProjectilePrefab, _shootPoint.position, Quaternion.Euler(0f, 0f, _spread)).GetComponent<Projectile>().Launch(_weaponData, _ammoData, _pawn);
                 if (_weaponData.ConsumeAmmoByProjectile)
                 {
                     _ammoInMag--;
@@ -94,7 +97,7 @@ namespace WinterUniverse
 
         public void Reload()
         {
-            if (_isFiring || _isReloading || _weaponData == null)
+            if (_pawn.IsDead || _isFiring || _isReloading || _weaponData == null)
             {
                 return;
             }
@@ -118,27 +121,34 @@ namespace WinterUniverse
         private IEnumerator ReloadAction()
         {
             yield return new WaitForSeconds(_weaponData.ReloadTime);
-            if (_weaponData.ConsumeAmmoByReload)
+            if (!_pawn.IsDead && !_isFiring && _weaponData != null && _ammoData != null)
             {
-                _ammoDif = _weaponData.MagSize - _ammoInMag;
-                _ammoInInventory = _pawn.PawnInventory.AmountOfItem(_ammoData);
-                if (_ammoDif > _ammoInInventory)
+                if (_weaponData.ConsumeAmmoByReload)
                 {
-                    _ammoDif = _ammoInInventory;
+                    _ammoDif = _weaponData.MagSize - _ammoInMag;
+                    _ammoInInventory = _pawn.PawnInventory.AmountOfItem(_ammoData);
+                    if (_ammoDif > _ammoInInventory)
+                    {
+                        _ammoDif = _ammoInInventory;
+                    }
+                    _pawn.PawnInventory.RemoveItem(_ammoData, _ammoDif);
+                    _ammoInMag += _ammoDif;
+                    _ammoInInventory = _pawn.PawnInventory.AmountOfItem(_ammoData);
                 }
-                _pawn.PawnInventory.RemoveItem(_ammoData, _ammoDif);
-                _ammoInMag += _ammoDif;
-                _ammoInInventory = _pawn.PawnInventory.AmountOfItem(_ammoData);
-            }
-            else
-            {
-                _ammoInMag = _weaponData.MagSize;
+                else
+                {
+                    _ammoInMag = _weaponData.MagSize;
+                }
             }
             _isReloading = false;
         }
 
         public void ChangeAmmo()
         {
+            if (_pawn.IsDead || _isFiring || _isReloading || _weaponData == null)
+            {
+                return;
+            }
             if (_pawn.PawnInventory.GetAmmo(_weaponData, out AmmoItemData ammo))
             {
                 ChangeAmmo(ammo);
@@ -147,6 +157,10 @@ namespace WinterUniverse
 
         public void ChangeAmmo(AmmoItemData ammo)
         {
+            if (_pawn.IsDead || _isFiring || _isReloading)
+            {
+                return;
+            }
             Discharge();
             _ammoData = ammo;
             Reload();
@@ -154,7 +168,7 @@ namespace WinterUniverse
 
         public void Discharge()
         {
-            if (_isFiring || _isReloading || _weaponData == null || _ammoData == null)
+            if (_pawn.IsDead || _isFiring || _isReloading || _weaponData == null || _ammoData == null)
             {
                 return;
             }

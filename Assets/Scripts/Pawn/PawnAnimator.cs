@@ -33,5 +33,21 @@ namespace WinterUniverse
                 _animator.runtimeAnimatorController = _testDefaultController;
             }
         }
+
+        public void SetFloat(string name, float value)
+        {
+            _animator.SetFloat(name, value);
+        }
+
+        public void SetBool(string name, bool value)
+        {
+            _animator.SetBool(name, value);
+        }
+
+        public void PlayAction(string name, float fadeTime = 0.1f, bool canMove = false, bool canRotate = false)
+        {
+            _pawn.ToggleStates(canMove, canRotate);
+            _animator.CrossFade(name, fadeTime);
+        }
     }
 }

@@ -10,13 +10,15 @@ namespace WinterUniverse
 
         private WeaponItemData _weapon;
         private AmmoItemData _ammo;
+        private PawnController _pawn;
 
         private int _curPierceCount;
 
-        public void Launch(WeaponItemData weapon, AmmoItemData ammo)
+        public void Launch(WeaponItemData weapon, AmmoItemData ammo, PawnController pawn)
         {
             _weapon = weapon;
             _ammo = ammo;
+            _pawn = pawn;
             _curPierceCount = 0;
             StartCoroutine(DespawnTimer());
             _rb.linearVelocity = transform.right * _weapon.ProjectileForce * _ammo.ForceMultiplier;
@@ -30,16 +32,16 @@ namespace WinterUniverse
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.TryGetComponent(out PawnController pawn))
+            PawnController pawn = collision.GetComponentInParent<PawnController>();
+            if (pawn != null)
             {
-                pawn.PerformDeath();
-                //_weapon.Damage * _ammo.DamageMultiplier
-                //_weapon.ProjectileKnockback * _ammo.KnockbackMultiplier
-                _curPierceCount++;
-                if (_curPierceCount >= _ammo.PierceCount + 1)
-                {
-                    Despawn();
-                }
+                pawn.PawnLocomotion.ApplyKnockback(transform.right, _weapon.ProjectileKnockback * _ammo.KnockbackMultiplier);
+                pawn.TakeDamage(_weapon.Damage * _ammo.DamageMultiplier, _pawn);
+            }
+            _curPierceCount++;
+            if (_curPierceCount >= _ammo.PierceCount + 1)
+            {
+                Despawn();
             }
         }
 

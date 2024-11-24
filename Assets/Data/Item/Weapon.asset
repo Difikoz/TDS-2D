@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _displayName: Weapon
   _textColor: {r: 1, g: 1, b: 1, a: 1}
-  _iconSprite: {fileID: 0}
+  _iconSprite: {fileID: 7531406297805789275, guid: 464bbdd73de8700448de2f288404a497, type: 3}

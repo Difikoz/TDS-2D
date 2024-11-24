@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace WinterUniverse
@@ -11,7 +10,7 @@ namespace WinterUniverse
         [SerializeField] private ItemTypeData _itemType;
         [SerializeField] private Sprite _iconSprite;
         [SerializeField] private Sprite _lootSprite;
-        [SerializeField] private List<float> _usedByRecipes = new();
+        [SerializeField] private bool _usableFromGround = true;
         [SerializeField] private int _price = 100;
         [SerializeField] private float _size = 1f;
         [SerializeField] private float _weight = 1f;
@@ -22,7 +21,7 @@ namespace WinterUniverse
         public ItemTypeData ItemType => _itemType;
         public Sprite IconSprite => _iconSprite;
         public Sprite LootSprite => _lootSprite;
-        public List<float> UsedByRecipes => _usedByRecipes;
+        public bool UsableFromGround => _usableFromGround;
         public int Price => _price;
         public float Size => _size;
         public float Weight => _weight;

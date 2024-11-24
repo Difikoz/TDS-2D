@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _displayName: Combat
   _textColor: {r: 1, g: 1, b: 1, a: 1}
-  _iconSprite: {fileID: 0}
+  _iconSprite: {fileID: 3723399090515337254, guid: 4f2551a623650f74f81bd07c8a170d8d, type: 3}

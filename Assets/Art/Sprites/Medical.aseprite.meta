@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e5fe2c3d255efee49a62187e6b2b5896
+guid: 55e81660e99d3704f95794d9c398d75c
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -122,7 +122,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Ammo 5.45x39
+  - name: Medkit
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
@@ -133,8 +133,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 16
-      height: 8
-    spriteID: 0cb8a90acb8e69c4194653cbf2f07f41
+      height: 16
+    spriteID: fed2a86bd1daa48469c19290687fa3ed
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -146,21 +146,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1532646892
-    name: Ammo 5.45x39
+    guid: 707737728
+    name: Medkit
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: Ammo 5.45x39
+    - name: Medkit
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 24
-        y: 28
+        y: 24
         width: 16
-        height: 8
-      spriteId: 0cb8a90acb8e69c4194653cbf2f07f41
+        height: 16
+      spriteId: fed2a86bd1daa48469c19290687fa3ed
     linkedCells: []
     parentIndex: -1
   platformSettings:

@@ -16,10 +16,10 @@ MonoBehaviour:
   _description: Description
   _rarity: {fileID: 11400000, guid: d4043a874eac7d749afde86eccd381ef, type: 2}
   _itemType: {fileID: 11400000, guid: 84e8e35f0040a7f478cd42dacac915a7, type: 2}
-  _iconSprite: {fileID: 0}
-  _lootSprite: {fileID: 0}
+  _iconSprite: {fileID: 6022499069204493363, guid: 9a225ab4c1a336444833d8eaf3e75a6d, type: 3}
+  _lootSprite: {fileID: 6022499069204493363, guid: 9a225ab4c1a336444833d8eaf3e75a6d, type: 3}
   _usedByRecipes: []
-  _cost: 50
+  _price: 100
   _size: 1
   _weight: 0.5
   _consumableType: {fileID: 11400000, guid: 58c14acb54573b64393d36bdd778571b, type: 2}

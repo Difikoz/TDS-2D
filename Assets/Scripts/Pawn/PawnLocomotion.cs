@@ -8,6 +8,7 @@ namespace WinterUniverse
         private PawnController _pawn;
         private Rigidbody2D _rb;
         private Vector2 _moveVelocity;
+        private Vector2 _knockbackVelocity;
         private float _requiredLookAngle;
         private float _currentLookAngle;
 
@@ -24,13 +25,11 @@ namespace WinterUniverse
 
         public void OnFixedUpdate()
         {
-            if (_pawn.IsDead)
+            if (_knockbackVelocity != Vector2.zero)
             {
-                _moveVelocity = Vector2.zero;
-                _rb.linearVelocity = Vector2.zero;
-                return;
+                _knockbackVelocity = Vector2.MoveTowards(_knockbackVelocity, Vector2.zero, _rb.mass * Time.fixedDeltaTime);
             }
-            if (_pawn.MoveDirection != Vector2.zero)
+            if (_pawn.MoveDirection != Vector2.zero && _pawn.CanMove)
             {
                 _moveVelocity = Vector2.MoveTowards(_moveVelocity, _pawn.MoveDirection * _pawn.MoveSpeed, _pawn.Acceleration * Time.fixedDeltaTime);
             }
@@ -38,10 +37,19 @@ namespace WinterUniverse
             {
                 _moveVelocity = Vector2.MoveTowards(_moveVelocity, Vector2.zero, _pawn.Deceleration * Time.fixedDeltaTime);
             }
-            _rb.linearVelocity = _moveVelocity;
-            _requiredLookAngle = Mathf.Atan2(_pawn.LookDirection.y, _pawn.LookDirection.x) * Mathf.Rad2Deg;
-            _currentLookAngle = Mathf.MoveTowardsAngle(_currentLookAngle, _requiredLookAngle, _pawn.RotateSpeed * Time.fixedDeltaTime);
-            _rb.rotation = _currentLookAngle;
+            _rb.linearVelocity = _moveVelocity + _knockbackVelocity;
+            if (_pawn.CanRotate)
+            {
+                _requiredLookAngle = Mathf.Atan2(_pawn.LookDirection.y, _pawn.LookDirection.x) * Mathf.Rad2Deg;
+                _currentLookAngle = Mathf.MoveTowardsAngle(_currentLookAngle, _requiredLookAngle, _pawn.RotateSpeed * Time.fixedDeltaTime);
+                _rb.rotation = _currentLookAngle;
+            }
+            _pawn.PawnAnimator.SetBool("IsMoving", _moveVelocity != Vector2.zero);
+        }
+
+        public void ApplyKnockback(Vector2 direction, float force)
+        {
+            _knockbackVelocity += direction.normalized * force;
         }
     }
 }

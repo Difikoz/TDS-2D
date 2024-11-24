@@ -28,6 +28,11 @@ namespace WinterUniverse
             _pawnInteraction.SecondaryInteract();
         }
 
+        public void OnFire(InputValue value)
+        {
+            _isFiring = value.isPressed;
+        }
+
         protected override void FixedUpdate()
         {
             _moveDirection = _moveInput;

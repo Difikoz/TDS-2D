@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _displayName: Consumable
   _textColor: {r: 1, g: 1, b: 1, a: 1}
-  _iconSprite: {fileID: 0}
+  _iconSprite: {fileID: 5990754638870433154, guid: c11f9f2429d781b44a238bc6516a417d, type: 3}
