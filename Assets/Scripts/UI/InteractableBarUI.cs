@@ -8,11 +8,16 @@ namespace WinterUniverse
         [SerializeField] private GameObject _bar;
         [SerializeField] private TMP_Text _text;
 
-        private void Start()
+        public void Initialize()
         {
             _bar.SetActive(false);
             _text.text = string.Empty;
-            FindFirstObjectByType<PlayerController>().PawnInteraction.OnInteractableChanged += OnInteractableChanged;
+            WorldManager.StaticInstance.Player.PawnInteraction.OnInteractableChanged += OnInteractableChanged;
+        }
+
+        public void Deinitialize()
+        {
+            WorldManager.StaticInstance.Player.PawnInteraction.OnInteractableChanged -= OnInteractableChanged;
         }
 
         private void OnInteractableChanged(Interactable interactable)

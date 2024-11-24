@@ -28,6 +28,11 @@ namespace WinterUniverse
             _pawnInteraction.SecondaryInteract();
         }
 
+        public void OnInventory()
+        {
+            WorldManager.StaticInstance.UIManager.InventoryBar.ShowBar();
+        }
+
         public void OnFire(InputValue value)
         {
             _isFiring = value.isPressed;

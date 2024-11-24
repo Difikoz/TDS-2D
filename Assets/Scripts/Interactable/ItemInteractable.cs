@@ -24,7 +24,7 @@ namespace WinterUniverse
 
         public override string GetText()
         {
-            return $"[<b><color=#{ColorUtility.ToHtmlStringRGBA(_item.Rarity.TextColor)}>{_item.DisplayName}</color></b> x{_amount}]\nTap [F] to pick up{(_item.UsableFromGround ? " or Hold [F] to use" : "")}";
+            return $"[<b><color=#{ColorUtility.ToHtmlStringRGBA(_item.Rarity.TextColor)}>{_item.DisplayName}</color></b>] x{_amount}\nTap [F] to pick up{(_item.UsableFromGround ? " or Hold [F] to use" : "")}";
         }
 
         public override void PrimaryInteraction(PawnController pawn)

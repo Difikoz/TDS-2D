@@ -28,6 +28,7 @@ namespace WinterUniverse
         protected bool _canMove = true;
         protected bool _canRotate = true;
         protected bool _isDead;
+        protected bool _initialized;
 
         protected float _healthCurrent;
         protected float _energyCurrent;
@@ -50,6 +51,7 @@ namespace WinterUniverse
         public bool CanMove => _canMove;
         public bool CanRotate => _canRotate;
         public bool IsDead => _isDead;
+        public bool Initialized => _initialized;
         public float Acceleration => _acceleration;
         public float Deceleration => _deceleration;
         public float MoveSpeed => _moveSpeed;
@@ -57,11 +59,19 @@ namespace WinterUniverse
         public float HealthMax => _healthMax;
         public float EnergyMax => _energyMax;
 
-        private void Awake()
+        public void Initialize()
         {
             GetComponents();
             InitializeComponents();
             _healthCurrent = _healthMax;// test
+            _isDead = false;
+            _initialized = true;
+        }
+
+        public void Deinitialize()
+        {
+            _initialized = false;
+            DeinitializeComponents();
         }
 
         protected virtual void GetComponents()
@@ -98,6 +108,10 @@ namespace WinterUniverse
 
         protected virtual void FixedUpdate()
         {
+            if (!_initialized)
+            {
+                return;
+            }
             _pawnInteraction.OnFixedUpdate();
             _pawnLocomotion.OnFixedUpdate();
             if (_isFiring)
@@ -122,7 +136,7 @@ namespace WinterUniverse
         protected virtual IEnumerator ProcessDeath()
         {
             yield return new WaitForSeconds(5f);
-            DeinitializeComponents();
+            Deinitialize();
             yield return null;
             Destroy(gameObject);
         }
