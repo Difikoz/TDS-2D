@@ -40,6 +40,8 @@ namespace WinterUniverse
         [HideInInspector] public Stat ElectricalResistance;
         [HideInInspector] public Stat ChemicalResistance;
 
+        [HideInInspector] public Stat Acceleration;
+        [HideInInspector] public Stat Deceleration;
         [HideInInspector] public Stat MoveSpeed;
         [HideInInspector] public Stat RotateSpeed;
 
@@ -254,6 +256,14 @@ namespace WinterUniverse
                 else if (s.Data.DisplayName == "Chemical Resistance")
                 {
                     ChemicalResistance = s;
+                }
+                else if (s.Data.DisplayName == "Acceleration")
+                {
+                    Acceleration = s;
+                }
+                else if (s.Data.DisplayName == "Deceleration")
+                {
+                    Deceleration = s;
                 }
                 else if (s.Data.DisplayName == "Move Speed")
                 {

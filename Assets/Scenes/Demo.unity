@@ -179,7 +179,7 @@ PrefabInstance:
     - target: {fileID: 2585770249234798249, guid: 89bbed80db53656489b7808d1136a571, type: 3}
       propertyPath: _item
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: f8657cbc8f546cc49882e556da0d9906, type: 2}
     - target: {fileID: 2585770249234798249, guid: 89bbed80db53656489b7808d1136a571, type: 3}
       propertyPath: _amount
       value: 100
@@ -563,6 +563,10 @@ PrefabInstance:
     - target: {fileID: 661904284230524430, guid: aa087878d83825a4cbb1e58c3e4c19ca, type: 3}
       propertyPath: m_Name
       value: AI
+      objectReference: {fileID: 0}
+    - target: {fileID: 661904284230524430, guid: aa087878d83825a4cbb1e58c3e4c19ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4453459347712447422, guid: aa087878d83825a4cbb1e58c3e4c19ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1108,6 +1112,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2585770249234798249, guid: 89bbed80db53656489b7808d1136a571, type: 3}
+      propertyPath: _item
+      value: 
+      objectReference: {fileID: 11400000, guid: a2deb3a039daae2459a99e25d8aa804c, type: 2}
     - target: {fileID: 6799756463125598864, guid: 89bbed80db53656489b7808d1136a571, type: 3}
       propertyPath: m_Name
       value: Item Interactable
@@ -2049,10 +2057,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stats:
+  - {fileID: 11400000, guid: 44d8216c342fc124582e3198e2a79e4a, type: 2}
   - {fileID: 11400000, guid: dc0b5eaa499cf5c49b8117cb98c23f83, type: 2}
   - {fileID: 11400000, guid: ac28d33c8d1ae404ca23d50c87107447, type: 2}
   - {fileID: 11400000, guid: f81c95bf3ab36ed4485dc5cc560c1964, type: 2}
   - {fileID: 11400000, guid: 682f7ae2d2c1d244aa4c2a50dffcaed7, type: 2}
+  - {fileID: 11400000, guid: b8f51b87bc9564647a79273ea14d1b99, type: 2}
   - {fileID: 11400000, guid: 38b51a33e992b494f85f7986fb69699f, type: 2}
   - {fileID: 11400000, guid: bd01191b7ec3b2a4e9e142106c930379, type: 2}
   - {fileID: 11400000, guid: b0dd1b393baf1cb41b7e0ecec93f0823, type: 2}
@@ -2079,6 +2089,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 563924714922da149b11edcaa4cd978a, type: 2}
   - {fileID: 11400000, guid: 42e7f8f7a12338d42a9f212bc9bb644f, type: 2}
   _weapons: []
+  _ammo: []
   _armors: []
   _consumables: []
   _resources: []

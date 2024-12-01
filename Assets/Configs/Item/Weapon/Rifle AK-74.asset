@@ -26,10 +26,10 @@ MonoBehaviour:
   _equippedSprite: {fileID: 7531406297805789275, guid: 464bbdd73de8700448de2f288404a497, type: 3}
   _shootPointOffset: {x: 0.8, y: 0, z: 0}
   _element: {fileID: 11400000, guid: 91c8b41ecaac83a4f9efb6453bbb5692, type: 2}
-  _damage: 10
-  _fireRate: 60
+  _damage: 5
+  _fireRate: 600
   _range: 25
-  _reloadTime: 1
+  _reloadTime: 2
   _consumeAmmoByShot: 1
   _consumeAmmoByProjectile: 0
   _consumeAmmoByReload: 1

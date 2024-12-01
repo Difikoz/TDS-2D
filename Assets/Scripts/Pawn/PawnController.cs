@@ -16,6 +16,8 @@ namespace WinterUniverse
     {
         public Action OnDeath;
 
+        [SerializeField] protected PawnConfig _pawnConfig;
+
         protected PawnAnimator _pawnAnimator;
         protected PawnCombat _pawnCombat;
         protected PawnEquipment _pawnEquipment;
@@ -23,6 +25,7 @@ namespace WinterUniverse
         protected PawnInventory _pawnInventory;
         protected PawnLocomotion _pawnLocomotion;
         protected PawnStats _pawnStats;
+        protected FactionConfig _faction;
         protected CircleCollider2D _collider;
         protected Vector2 _moveDirection;
         protected Vector2 _lookDirection;
@@ -36,11 +39,6 @@ namespace WinterUniverse
         protected bool _isDead;
         protected bool _initialized;
 
-        [SerializeField] private float _acceleration = 8f;
-        [SerializeField] private float _deceleration = 16f;
-        [SerializeField] private float _moveSpeed = 4f;
-        [SerializeField] private float _rotateSpeed = 180f;
-
         public PawnAnimator PawnAnimator => _pawnAnimator;
         public PawnCombat PawnCombat => _pawnCombat;
         public PawnEquipment PawnEquipment => _pawnEquipment;
@@ -48,20 +46,22 @@ namespace WinterUniverse
         public PawnInventory PawnInventory => _pawnInventory;
         public PawnLocomotion PawnLocomotion => _pawnLocomotion;
         public PawnStats PawnStats => _pawnStats;
+        public FactionConfig Faction => _faction;
         public Vector2 MoveDirection => _moveDirection;
         public Vector2 LookDirection => _lookDirection;
         public bool IsRunning => _isRunning;
         public bool IsDead => _isDead;
         public bool Initialized => _initialized;
-        public float Acceleration => _acceleration;
-        public float Deceleration => _deceleration;
-        public float MoveSpeed => _moveSpeed;
-        public float RotateSpeed => _rotateSpeed;
 
-        public void Initialize()
+        public void Initialize(PawnConfig config = null)
         {
+            if (config != null)
+            {
+                _pawnConfig = config;
+            }
             GetComponents();
             InitializeComponents();
+            _collider.enabled = true;
             _isDead = false;
             _initialized = true;
         }
@@ -93,7 +93,18 @@ namespace WinterUniverse
             _pawnInventory.Initialize();
             _pawnLocomotion.Initialize();
             _pawnStats.Initialize();
-            _collider.enabled = true;
+            foreach (ItemStack stack in _pawnConfig.StartingItems)
+            {
+                _pawnInventory.AddItem(stack.Item, stack.Amount);
+            }
+            _pawnStats.CreateStats();
+            foreach (StatModifierCreator modifier in _pawnConfig.StartingStats)
+            {
+                _pawnStats.AddStatModifier(modifier);
+            }
+            _faction = _pawnConfig.Faction;
+            _pawnEquipment.EquipWeapon(_pawnConfig.Weapon);
+            _pawnEquipment.EquipArmor(_pawnConfig.Armor);
         }
 
         protected virtual void DeinitializeComponents()
