@@ -71,33 +71,33 @@ ScriptedImporter:
     textureFormatSet: 0
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
-    fileImportMode: 0
+    fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
-    mosaicPadding: 0
+    mosaicPadding: 4
     spritePadding: 0
-    generateModelPrefab: 1
-    generateAnimationClips: 1
-    addSortingGroup: 1
+    generateModelPrefab: 0
+    generateAnimationClips: 0
+    addSortingGroup: 0
     addShadowCasters: 0
   asepriteImporterSettings:
-    fileImportMode: 0
+    fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
-    mosaicPadding: 0
+    mosaicPadding: 4
     spritePadding: 0
-    generateModelPrefab: 1
-    generateAnimationClips: 1
-    addSortingGroup: 1
+    generateModelPrefab: 0
+    generateAnimationClips: 0
+    addSortingGroup: 0
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638686777997060516
+  platformSettingsDirtyTick: 638686840983913323
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -122,9 +122,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Ammo 5.45x39 Icon
+  - name: 1
     originalName: 
-    pivot: {x: 0.5, y: -3.5}
+    pivot: {x: 0.5, y: 0.5074627}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -132,9 +132,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 16
-      height: 8
-    spriteID: df722445cef8f8e4184ce0ff415dfff8
+      width: 162
+      height: 67
+    spriteID: 72e62c2e36e43814aa9426c6d1bbfbe7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -146,21 +146,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1774795267
-    name: Ammo 5.45x39 Icon
-    layerFlags: 0
+    guid: 1666753961
+    name: 1
+    layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: Ammo 5.45x39 Icon
+    - name: 1
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 24
-        y: 28
-        width: 16
-        height: 8
-      spriteId: df722445cef8f8e4184ce0ff415dfff8
+        x: 47
+        y: 94
+        width: 162
+        height: 67
+      spriteId: 72e62c2e36e43814aa9426c6d1bbfbe7
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -179,10 +179,10 @@ ScriptedImporter:
   - name: DefaultTexturePlatform
     overridden: 0
     ignorePlatformSupport: 0
-    maxTextureSize: 2048
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     forceMaximumCompressionQuality_BC6H_BC7: 0
     crunchedCompression: 0
@@ -215,4 +215,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 64}
+  canvasSize: {x: 256, y: 256}

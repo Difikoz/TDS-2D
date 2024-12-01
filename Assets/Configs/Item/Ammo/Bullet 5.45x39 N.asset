@@ -16,8 +16,8 @@ MonoBehaviour:
   _description: Description
   _rarity: {fileID: 11400000, guid: 275b36ab6aedbb14184c17187502aa55, type: 2}
   _itemType: {fileID: 11400000, guid: 1dc25a32cddd8b94fb013d836fd6355b, type: 2}
-  _iconSprite: {fileID: -2383005956409560204, guid: e5fe2c3d255efee49a62187e6b2b5896, type: 3}
-  _lootSprite: {fileID: -2383005956409560204, guid: e5fe2c3d255efee49a62187e6b2b5896, type: 3}
+  _iconSprite: {fileID: 21300000, guid: 2f14777a7f9c9694fa03073cd989e837, type: 3}
+  _lootSprite: {fileID: 21300000, guid: 2f14777a7f9c9694fa03073cd989e837, type: 3}
   _usableFromGround: 0
   _price: 10
   _size: 0.1
