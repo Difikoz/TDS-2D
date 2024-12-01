@@ -8,11 +8,11 @@ namespace WinterUniverse
     {
         [SerializeField] private ArmorTypeConfig _armorType;
         [SerializeField] private Sprite _equippedSprite;
-        [SerializeField] private List<float> _resistance = new();
+        [SerializeField] private List<StatModifierCreator> _modifiers = new();
 
         public ArmorTypeConfig ArmorType => _armorType;
         public Sprite EquippedSprite => _equippedSprite;
-        public List<float> Resistance => _resistance;
+        public List<StatModifierCreator> Modifiers => _modifiers;
 
         public override bool OnUse(PawnController pawn, bool fromInventory = true)
         {

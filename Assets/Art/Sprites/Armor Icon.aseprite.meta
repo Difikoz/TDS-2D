@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9a225ab4c1a336444833d8eaf3e75a6d
+guid: 5da6136083ee3d646a3d26595e3ca632
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -122,9 +122,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Juice
+  - name: Leather Jacket Icon
     originalName: 
-    pivot: {x: 0.44444445, y: 0.36363637}
+    pivot: {x: 0.5, y: 0.52380955}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -132,9 +132,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 9
-      height: 22
-    spriteID: 3f767687b7ba87a498f31aca7fadfed4
+      width: 38
+      height: 42
+    spriteID: d6ebf582224c1d84ca0cde9d4500390d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,24 +143,63 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Exoskelet Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.52380955}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 54
+      width: 38
+      height: 42
+    spriteID: bfac2682fba488546a21d52979d3b02a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 54}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1380639430
-    name: Juice
+    guid: 1204417664
+    name: Leather Jacket Icon
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: Juice
+    - name: Leather Jacket Icon
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 28
-        y: 24
-        width: 9
-        height: 22
-      spriteId: 3f767687b7ba87a498f31aca7fadfed4
+        x: 13
+        y: 10
+        width: 38
+        height: 42
+      spriteId: d6ebf582224c1d84ca0cde9d4500390d
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 1
+    guid: 813709524
+    name: Exoskelet Icon
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Exoskelet Icon
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 13
+        y: 10
+        width: 38
+        height: 42
+      spriteId: bfac2682fba488546a21d52979d3b02a
     linkedCells: []
     parentIndex: -1
   platformSettings:

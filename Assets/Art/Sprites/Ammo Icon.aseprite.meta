@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4f2551a623650f74f81bd07c8a170d8d
+guid: e5fe2c3d255efee49a62187e6b2b5896
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -122,9 +122,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Leather Jacket
+  - name: Ammo 5.45x39 Icon
     originalName: 
-    pivot: {x: 0.35714287, y: 0.5}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -132,9 +132,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 28
-      height: 32
-    spriteID: 4129a996fd557d74285769434250cf8e
+      width: 16
+      height: 8
+    spriteID: d5839c93c341a13468f1d85336c01c17
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,63 +143,24 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Exoskelet
-    originalName: 
-    pivot: {x: 0.35714287, y: 0.5}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 44
-      width: 28
-      height: 32
-    spriteID: b248e3278ea82a348a4c950ca3ddd879
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 44}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 270577941
-    name: Leather Jacket
+    guid: -1774795267
+    name: Ammo 5.45x39 Icon
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: Leather Jacket
+    - name: Ammo 5.45x39 Icon
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 22
-        y: 16
-        width: 28
-        height: 32
-      spriteId: 4129a996fd557d74285769434250cf8e
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 1
-    guid: 1470699803
-    name: Exoskelet
-    layerFlags: 3
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Exoskelet
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 22
-        y: 16
-        width: 28
-        height: 32
-      spriteId: b248e3278ea82a348a4c950ca3ddd879
+        x: 24
+        y: 28
+        width: 16
+        height: 8
+      spriteId: d5839c93c341a13468f1d85336c01c17
     linkedCells: []
     parentIndex: -1
   platformSettings:

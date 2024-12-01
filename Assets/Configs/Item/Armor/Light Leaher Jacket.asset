@@ -16,12 +16,20 @@ MonoBehaviour:
   _description: Description
   _rarity: {fileID: 11400000, guid: d4043a874eac7d749afde86eccd381ef, type: 2}
   _itemType: {fileID: 11400000, guid: 38c06f1d54c275c42aa6748947e40265, type: 2}
-  _iconSprite: {fileID: 3723399090515337254, guid: 4f2551a623650f74f81bd07c8a170d8d, type: 3}
-  _lootSprite: {fileID: 3723399090515337254, guid: 4f2551a623650f74f81bd07c8a170d8d, type: 3}
+  _iconSprite: {fileID: -5550314752833342907, guid: 5da6136083ee3d646a3d26595e3ca632, type: 3}
+  _lootSprite: {fileID: -5550314752833342907, guid: 5da6136083ee3d646a3d26595e3ca632, type: 3}
   _usableFromGround: 1
   _price: 250
   _size: 2
   _weight: 2
   _armorType: {fileID: 11400000, guid: 542699aa9ef37fd4eae15b87bc4148a7, type: 2}
-  _equippedSprite: {fileID: 3723399090515337254, guid: 4f2551a623650f74f81bd07c8a170d8d, type: 3}
-  _resistance: []
+  _equippedSprite: {fileID: -8270644901687318649, guid: 4f2551a623650f74f81bd07c8a170d8d, type: 3}
+  _modifiers:
+  - _stat: {fileID: 11400000, guid: 424cfdb0cbd781f4d8d363732d25b42f, type: 2}
+    _modifier:
+      _type: 1
+      _value: 25
+  - _stat: {fileID: 11400000, guid: 25a5b081642a9e941844b618f47e0aba, type: 2}
+    _modifier:
+      _type: 1
+      _value: 25

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c11f9f2429d781b44a238bc6516a417d
+guid: 4f2551a623650f74f81bd07c8a170d8d
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -122,9 +122,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Bread
+  - name: Leather Jacket Equipped
     originalName: 
-    pivot: {x: 0.5, y: 0.44444445}
+    pivot: {x: 0.35714287, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -132,9 +132,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 16
-      height: 9
-    spriteID: 892a688c9dabe564cb72b0ee4ed41e81
+      width: 28
+      height: 32
+    spriteID: 10c043f8595b9594083ee8c2818caa59
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,24 +143,63 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Exoskelet Equipped
+    originalName: 
+    pivot: {x: 0.35714287, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 44
+      width: 28
+      height: 32
+    spriteID: 53a155a466310404d8df6df7baa7d140
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 44}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1901935004
-    name: Bread
+    guid: -1683264300
+    name: Leather Jacket Equipped
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: Bread
+    - name: Leather Jacket Equipped
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 24
-        y: 28
-        width: 16
-        height: 9
-      spriteId: 892a688c9dabe564cb72b0ee4ed41e81
+        x: 22
+        y: 16
+        width: 28
+        height: 32
+      spriteId: 10c043f8595b9594083ee8c2818caa59
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 1
+    guid: 2126066150
+    name: Exoskelet Equipped
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Exoskelet Equipped
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 22
+        y: 16
+        width: 28
+        height: 32
+      spriteId: 53a155a466310404d8df6df7baa7d140
     linkedCells: []
     parentIndex: -1
   platformSettings:

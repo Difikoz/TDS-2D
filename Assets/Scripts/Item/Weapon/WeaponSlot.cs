@@ -77,20 +77,39 @@ namespace WinterUniverse
 
         private IEnumerator FireAction()
         {
-            WaitForSeconds delay = new(_weaponConfig.ProjectileDelay);
-            for (int i = 0; i < _weaponConfig.ProjectilePerShot; i++)
+            if (_weaponConfig.ProjectileDelay > 0f)
             {
-                _spread = _shootPoint.eulerAngles.z + Random.Range(-_weaponConfig.ProjectileSpread, _weaponConfig.ProjectileSpread);
-                Instantiate(_ammoConfig.ProjectilePrefab, _shootPoint.position, Quaternion.Euler(0f, 0f, _spread)).GetComponent<Projectile>().Launch(_weaponConfig, _ammoConfig, _pawn);
-                if (_weaponConfig.ConsumeAmmoByProjectile)
+                WaitForSeconds delay = new(_weaponConfig.ProjectileDelay);
+                for (int i = 0; i < _weaponConfig.ProjectilePerShot; i++)
                 {
-                    _ammoInMag--;
-                    if (_ammoInMag == 0)
+                    _spread = _shootPoint.eulerAngles.z + Random.Range(-_weaponConfig.ProjectileSpread, _weaponConfig.ProjectileSpread);
+                    Instantiate(_ammoConfig.ProjectilePrefab, _shootPoint.position, Quaternion.Euler(0f, 0f, _spread)).GetComponent<Projectile>().Launch(_weaponConfig, _ammoConfig, _pawn);
+                    if (_weaponConfig.ConsumeAmmoByProjectile)
                     {
-                        break;
+                        _ammoInMag--;
+                        if (_ammoInMag == 0)
+                        {
+                            break;
+                        }
+                    }
+                    yield return delay;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < _weaponConfig.ProjectilePerShot; i++)
+                {
+                    _spread = _shootPoint.eulerAngles.z + Random.Range(-_weaponConfig.ProjectileSpread, _weaponConfig.ProjectileSpread);
+                    Instantiate(_ammoConfig.ProjectilePrefab, _shootPoint.position, Quaternion.Euler(0f, 0f, _spread)).GetComponent<Projectile>().Launch(_weaponConfig, _ammoConfig, _pawn);
+                    if (_weaponConfig.ConsumeAmmoByProjectile)
+                    {
+                        _ammoInMag--;
+                        if (_ammoInMag == 0)
+                        {
+                            break;
+                        }
                     }
                 }
-                yield return delay;
             }
             yield return new WaitForSeconds(60f / _weaponConfig.FireRate);
             _isFiring = false;

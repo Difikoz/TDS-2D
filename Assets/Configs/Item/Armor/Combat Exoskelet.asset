@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55521b3298accd04b988c92705d465af, type: 3}
+  m_Name: Combat Exoskelet
+  m_EditorClassIdentifier: 
+  _displayName: Exoskelet
+  _description: Description
+  _rarity: {fileID: 11400000, guid: 80f03a962a32b36418c0d8eead91a567, type: 2}
+  _itemType: {fileID: 11400000, guid: 38c06f1d54c275c42aa6748947e40265, type: 2}
+  _iconSprite: {fileID: -6330903567312760178, guid: 5da6136083ee3d646a3d26595e3ca632, type: 3}
+  _lootSprite: {fileID: -6330903567312760178, guid: 5da6136083ee3d646a3d26595e3ca632, type: 3}
+  _usableFromGround: 1
+  _price: 10000
+  _size: 3
+  _weight: 5
+  _armorType: {fileID: 11400000, guid: 97bd250de2ce7504db27e82affce54a8, type: 2}
+  _equippedSprite: {fileID: 8982680869476798561, guid: 4f2551a623650f74f81bd07c8a170d8d, type: 3}
+  _modifiers:
+  - _stat: {fileID: 11400000, guid: ac28d33c8d1ae404ca23d50c87107447, type: 2}
+    _modifier:
+      _type: 0
+      _value: 50
+  - _stat: {fileID: 11400000, guid: 682f7ae2d2c1d244aa4c2a50dffcaed7, type: 2}
+    _modifier:
+      _type: 0
+      _value: 50
+  - _stat: {fileID: 11400000, guid: bd01191b7ec3b2a4e9e142106c930379, type: 2}
+    _modifier:
+      _type: 0
+      _value: 50
+  - _stat: {fileID: 11400000, guid: 6dd5d40bcf315784f8be1701599f4ceb, type: 2}
+    _modifier:
+      _type: 0
+      _value: 50
+  - _stat: {fileID: 11400000, guid: d2240502e2518ab45b49e086c692a455, type: 2}
+    _modifier:
+      _type: 0
+      _value: 50
+  - _stat: {fileID: 11400000, guid: 383a6aa8389e8f54da3afe78ed799dcb, type: 2}
+    _modifier:
+      _type: 0
+      _value: 50

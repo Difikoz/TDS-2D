@@ -20,10 +20,11 @@ namespace WinterUniverse
         [SerializeField] private List<AmmoItemConfig> _usingAmmo = new();
         [SerializeField] private int _magSize = 1;
         [SerializeField] private int _projectilePerShot = 1;
-        [SerializeField] private float _projectileDelay = 0.01f;
+        [SerializeField] private float _projectileDelay = 0f;
         [SerializeField] private float _projectileForce = 25f;
         [SerializeField] private float _projectileKnockback = 2f;
         [SerializeField] private float _projectileSpread = 5f;
+        [SerializeField] private List<StatModifierCreator> _modifiers = new();
 
         public WeaponTypeConfig WeaponType => _weaponType;
         public Sprite EquippedSprite => _equippedSprite;
@@ -43,6 +44,7 @@ namespace WinterUniverse
         public float ProjectileForce => _projectileForce;
         public float ProjectileKnockback => _projectileKnockback;
         public float ProjectileSpread => _projectileSpread;
+        public List<StatModifierCreator> Modifiers => _modifiers;
 
         public override bool OnUse(PawnController pawn, bool fromInventory = true)
         {
