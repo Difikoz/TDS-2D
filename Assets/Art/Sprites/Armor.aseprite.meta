@@ -130,7 +130,7 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 76
+      x: 4
       y: 4
       width: 20
       height: 32
@@ -142,70 +142,28 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 4}
-  - name: Leather Jacket_Frame_1
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 104
-      y: 4
-      width: 20
-      height: 32
-    spriteID: 7c93a62129f00284088a2e41994b2ddd
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 104, y: 4}
-  - name: Leather Jacket_Frame_2
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 60
-      width: 20
-      height: 32
-    spriteID: 78091691e23614940ab9e82b45dce50e
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 60}
-  - name: Leather Jacket_Frame_3
-    originalName: 
-    pivot: {x: 0.5, y: 0.5416667}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 64
-      height: 48
-    spriteID: 64fc6da5fa1a6624ea91dd985ebe5948
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Exoskelet
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 4
+      width: 20
+      height: 32
+    spriteID: b248e3278ea82a348a4c950ca3ddd879
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 32, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -215,7 +173,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Leather Jacket_Frame_0
+    - name: Leather Jacket
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -224,33 +182,24 @@ ScriptedImporter:
         width: 20
         height: 32
       spriteId: 4129a996fd557d74285769434250cf8e
-    - name: Leather Jacket_Frame_1
-      frameIndex: 1
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 1
+    guid: 1470699803
+    name: Exoskelet
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Exoskelet
+      frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 22
         y: 16
         width: 20
         height: 32
-      spriteId: 7c93a62129f00284088a2e41994b2ddd
-    - name: Leather Jacket_Frame_2
-      frameIndex: 2
-      additiveSortOrder: 0
-      cellRect:
-        x: 22
-        y: 16
-        width: 20
-        height: 32
-      spriteId: 78091691e23614940ab9e82b45dce50e
-    - name: Leather Jacket_Frame_3
-      frameIndex: 3
-      additiveSortOrder: 0
-      cellRect:
-        x: 0
-        y: 6
-        width: 64
-        height: 48
-      spriteId: 64fc6da5fa1a6624ea91dd985ebe5948
+      spriteId: b248e3278ea82a348a4c950ca3ddd879
     linkedCells: []
     parentIndex: -1
   platformSettings:

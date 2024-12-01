@@ -5,32 +5,28 @@ namespace WinterUniverse
     public class ArmorSlot : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer _spriteRenderer;
-        [SerializeField] private PolygonCollider2D _collider;
 
         private PawnController _pawn;
-        private ArmorItemData _data;
+        private ArmorItemConfig _config;
 
-        public ArmorItemData Data => _data;
+        public ArmorItemConfig Config => _config;
 
         public void Initialize()
         {
             _pawn = GetComponentInParent<PawnController>();
-            _collider = GetComponentInChildren<PolygonCollider2D>();
         }
 
-        public void Setup(ArmorItemData data)
+        public void Setup(ArmorItemConfig config)
         {
-            _data = data;
-            if (_collider != null)
+            _config = config;
+            if (_spriteRenderer != null && _config.EquippedSprite != null)
             {
-                Destroy(_collider);
+                _spriteRenderer.sprite = _config.EquippedSprite;
             }
-            _collider = _spriteRenderer.gameObject.AddComponent<PolygonCollider2D>();
-            _collider.isTrigger = true;
-            //if (_spriteRenderer != null && _data.EquippedSprite != null)
-            //{
-            //    _spriteRenderer.sprite = _data.EquippedSprite;
-            //}
+            else
+            {
+                _spriteRenderer.sprite = null;
+            }
         }
     }
 }

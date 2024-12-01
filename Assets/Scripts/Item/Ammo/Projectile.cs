@@ -8,13 +8,13 @@ namespace WinterUniverse
     {
         [SerializeField] private Rigidbody2D _rb;
 
-        private WeaponItemData _weapon;
-        private AmmoItemData _ammo;
+        private WeaponItemConfig _weapon;
+        private AmmoItemConfig _ammo;
         private PawnController _pawn;
 
         private int _curPierceCount;
 
-        public void Launch(WeaponItemData weapon, AmmoItemData ammo, PawnController pawn)
+        public void Launch(WeaponItemConfig weapon, AmmoItemConfig ammo, PawnController pawn)
         {
             _weapon = weapon;
             _ammo = ammo;
@@ -36,7 +36,7 @@ namespace WinterUniverse
             if (pawn != null)
             {
                 pawn.PawnLocomotion.ApplyKnockback(transform.right, _weapon.ProjectileKnockback * _ammo.KnockbackMultiplier);
-                pawn.TakeDamage(_weapon.Damage * _ammo.DamageMultiplier, _pawn);
+                pawn.PawnStats.ReduceCurrentHealth(_weapon.Damage * _ammo.DamageMultiplier, _weapon.Element, _pawn);
             }
             _curPierceCount++;
             if (_curPierceCount >= _ammo.PierceCount + 1)

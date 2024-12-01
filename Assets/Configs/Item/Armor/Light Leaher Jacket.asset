@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55521b3298accd04b988c92705d465af, type: 3}
+  m_Name: Light Leaher Jacket
+  m_EditorClassIdentifier: 
+  _displayName: Leaher Jacket
+  _description: Description
+  _rarity: {fileID: 11400000, guid: d4043a874eac7d749afde86eccd381ef, type: 2}
+  _itemType: {fileID: 11400000, guid: 38c06f1d54c275c42aa6748947e40265, type: 2}
+  _iconSprite: {fileID: 3723399090515337254, guid: 4f2551a623650f74f81bd07c8a170d8d, type: 3}
+  _lootSprite: {fileID: 3723399090515337254, guid: 4f2551a623650f74f81bd07c8a170d8d, type: 3}
+  _usableFromGround: 1
+  _price: 250
+  _size: 2
+  _weight: 2
+  _armorType: {fileID: 11400000, guid: 542699aa9ef37fd4eae15b87bc4148a7, type: 2}
+  _equippedSprite: {fileID: 3723399090515337254, guid: 4f2551a623650f74f81bd07c8a170d8d, type: 3}
+  _resistance: []

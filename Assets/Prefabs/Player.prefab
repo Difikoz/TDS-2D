@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6943283713983632168}
   - component: {fileID: 3655221451110307178}
   - component: {fileID: 7037973238891215700}
+  - component: {fileID: 4269801777654695997}
   - component: {fileID: 1641111121866719651}
   - component: {fileID: 8169694763752610105}
   - component: {fileID: 7609585733932641121}
@@ -56,12 +57,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b0c86ace844c2418d31e0753948539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanMove: 1
+  CanRotate: 1
+  IsPerfomingAction: 0
+  IsInvulnerable: 0
   _acceleration: 8
   _deceleration: 16
   _moveSpeed: 4
   _rotateSpeed: 360
-  _healthMax: 100
-  _energyMax: 100
 --- !u!114 &6841194008028849649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,7 +77,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6640f7d59b7ee13428b7df721e7e94f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _testDefaultController: {fileID: 22100000, guid: 51dd5021b78b7e548a9508ce87e2b91b, type: 2}
 --- !u!114 &3248924954537771022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +141,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3da598d77734d474aa0e8013c1798519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4269801777654695997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8587263741163189520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c4df3707baa7a4a8857085437365b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stats: []
+  HealthCurrent: 0
+  EnergyCurrent: 0
+  _regenerationTickDelay: 1
+  _healthRegenerationDelay: 10
+  _energyRegenerationDelay: 5
 --- !u!114 &1641111121866719651
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ namespace WinterUniverse
         [SerializeField] private Image _icon;
         [SerializeField] private TMP_Text _text;
 
-        private ItemData _item;
+        private ItemConfig _item;
 
         public void OnPointerClick(PointerEventData eventData)
         {

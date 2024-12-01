@@ -38,11 +38,11 @@ namespace WinterUniverse
         {
             while (_slotRoot.childCount > 0)
             {
-                Destroy(_slotRoot.GetChild(0).gameObject);
+                //Destroy(_slotRoot.GetChild(0).gameObject);
             }
             foreach (ItemStack stack in stacks)
             {
-                Instantiate(_slotPrefab, _slotRoot).GetComponent<InventorySlotUI>().Setup(stack);
+                //Instantiate(_slotPrefab, _slotRoot).GetComponent<InventorySlotUI>().Setup(stack);
             }
         }
     }

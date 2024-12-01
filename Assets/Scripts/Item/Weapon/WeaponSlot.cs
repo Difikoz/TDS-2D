@@ -9,8 +9,8 @@ namespace WinterUniverse
         [SerializeField] private Transform _shootPoint;
 
         private PawnController _pawn;
-        private WeaponItemData _weaponData;
-        private AmmoItemData _ammoData;
+        private WeaponItemConfig _weaponConfig;
+        private AmmoItemConfig _ammoConfig;
         private float _spread;
         private int _ammoInMag;
         private int _ammoInInventory;
@@ -18,45 +18,46 @@ namespace WinterUniverse
         private bool _isFiring;
         private bool _isReloading;
 
-        public WeaponItemData WeaponData => _weaponData;
-        public AmmoItemData AmmoData => _ammoData;
+        public WeaponItemConfig WeaponConfig => _weaponConfig;
+        public AmmoItemConfig AmmoConfig => _ammoConfig;
         public int AmmoInMag => _ammoInMag;
 
         public void Initialize()
         {
             _pawn = GetComponentInParent<PawnController>();
-            _isFiring = false;
-            _isReloading = false;
-        }
-
-        public void Setup(WeaponItemData data)
-        {
-            if (data != null)
-            {
-                _weaponData = data;
-                _ammoData = _weaponData.UsingAmmo[0];
-                _spriteRenderer.sprite = _weaponData.EquippedSprite;
-                _shootPoint.localPosition = _weaponData.ShootPointOffset;
-            }
-            else
-            {
-                _weaponData = null;
-                _ammoData = null;
-                _spriteRenderer.sprite = null;
-                _shootPoint.localPosition = Vector3.zero;
-            }
             StopAllCoroutines();
             _isFiring = false;
             _isReloading = false;
         }
 
+        public void Setup(WeaponItemConfig config)
+        {
+            StopAllCoroutines();
+            _isFiring = false;
+            _isReloading = false;
+            if (config != null)
+            {
+                _weaponConfig = config;
+                _spriteRenderer.sprite = _weaponConfig.EquippedSprite;
+                _shootPoint.localPosition = _weaponConfig.ShootPointOffset;
+                Reload();
+            }
+            else
+            {
+                _weaponConfig = null;
+                _ammoConfig = null;
+                _spriteRenderer.sprite = null;
+                _shootPoint.localPosition = Vector3.zero;
+            }
+        }
+
         public void Fire()
         {
-            if (_pawn.IsDead || _isFiring || _isReloading || _weaponData == null)
+            if (_pawn.IsDead || _isFiring || _isReloading || _weaponConfig == null)
             {
                 return;
             }
-            if (_ammoData == null)
+            if (_ammoConfig == null)
             {
                 ChangeAmmo();
                 return;
@@ -67,7 +68,7 @@ namespace WinterUniverse
                 return;
             }
             _isFiring = true;
-            if (_weaponData.ConsumeAmmoByShot)
+            if (_weaponConfig.ConsumeAmmoByShot)
             {
                 _ammoInMag--;
             }
@@ -76,12 +77,12 @@ namespace WinterUniverse
 
         private IEnumerator FireAction()
         {
-            WaitForSeconds delay = new(_weaponData.ProjectileDelay);
-            for (int i = 0; i < _weaponData.ProjectilePerShot; i++)
+            WaitForSeconds delay = new(_weaponConfig.ProjectileDelay);
+            for (int i = 0; i < _weaponConfig.ProjectilePerShot; i++)
             {
-                _spread = _shootPoint.eulerAngles.z + Random.Range(-_weaponData.ProjectileSpread, _weaponData.ProjectileSpread);
-                Instantiate(_ammoData.ProjectilePrefab, _shootPoint.position, Quaternion.Euler(0f, 0f, _spread)).GetComponent<Projectile>().Launch(_weaponData, _ammoData, _pawn);
-                if (_weaponData.ConsumeAmmoByProjectile)
+                _spread = _shootPoint.eulerAngles.z + Random.Range(-_weaponConfig.ProjectileSpread, _weaponConfig.ProjectileSpread);
+                Instantiate(_ammoConfig.ProjectilePrefab, _shootPoint.position, Quaternion.Euler(0f, 0f, _spread)).GetComponent<Projectile>().Launch(_weaponConfig, _ammoConfig, _pawn);
+                if (_weaponConfig.ConsumeAmmoByProjectile)
                 {
                     _ammoInMag--;
                     if (_ammoInMag == 0)
@@ -91,23 +92,23 @@ namespace WinterUniverse
                 }
                 yield return delay;
             }
-            yield return new WaitForSeconds(60f / _weaponData.FireRate);
+            yield return new WaitForSeconds(60f / _weaponConfig.FireRate);
             _isFiring = false;
         }
 
         public void Reload()
         {
-            if (_pawn.IsDead || _isFiring || _isReloading || _weaponData == null)
+            if (_pawn.IsDead || _isFiring || _isReloading || _weaponConfig == null)
             {
                 return;
             }
-            if (_ammoData == null)
+            if (_ammoConfig == null)
             {
                 ChangeAmmo();
                 return;
             }
-            _ammoInInventory = _pawn.PawnInventory.AmountOfItem(_ammoData);
-            if (!_weaponData.ConsumeAmmoByReload || _ammoInInventory > 0)
+            _ammoInInventory = _pawn.PawnInventory.AmountOfItem(_ammoConfig);
+            if (!_weaponConfig.ConsumeAmmoByReload || _ammoInInventory > 0)
             {
                 _isReloading = true;
                 StartCoroutine(ReloadAction());
@@ -120,24 +121,24 @@ namespace WinterUniverse
 
         private IEnumerator ReloadAction()
         {
-            yield return new WaitForSeconds(_weaponData.ReloadTime);
-            if (!_pawn.IsDead && !_isFiring && _weaponData != null && _ammoData != null)
+            yield return new WaitForSeconds(_weaponConfig.ReloadTime);
+            if (!_pawn.IsDead && !_isFiring && _weaponConfig != null && _ammoConfig != null)
             {
-                if (_weaponData.ConsumeAmmoByReload)
+                if (_weaponConfig.ConsumeAmmoByReload)
                 {
-                    _ammoDif = _weaponData.MagSize - _ammoInMag;
-                    _ammoInInventory = _pawn.PawnInventory.AmountOfItem(_ammoData);
+                    _ammoDif = _weaponConfig.MagSize - _ammoInMag;
+                    _ammoInInventory = _pawn.PawnInventory.AmountOfItem(_ammoConfig);
                     if (_ammoDif > _ammoInInventory)
                     {
                         _ammoDif = _ammoInInventory;
                     }
-                    _pawn.PawnInventory.RemoveItem(_ammoData, _ammoDif);
+                    _pawn.PawnInventory.RemoveItem(_ammoConfig, _ammoDif);
                     _ammoInMag += _ammoDif;
-                    _ammoInInventory = _pawn.PawnInventory.AmountOfItem(_ammoData);
+                    _ammoInInventory = _pawn.PawnInventory.AmountOfItem(_ammoConfig);
                 }
                 else
                 {
-                    _ammoInMag = _weaponData.MagSize;
+                    _ammoInMag = _weaponConfig.MagSize;
                 }
             }
             _isReloading = false;
@@ -145,38 +146,38 @@ namespace WinterUniverse
 
         public void ChangeAmmo()
         {
-            if (_pawn.IsDead || _isFiring || _isReloading || _weaponData == null)
+            if (_pawn.IsDead || _isFiring || _isReloading || _weaponConfig == null)
             {
                 return;
             }
-            if (_pawn.PawnInventory.GetAmmo(_weaponData, out AmmoItemData ammo))
+            if (_pawn.PawnInventory.GetAmmo(_weaponConfig, out AmmoItemConfig ammo))
             {
                 ChangeAmmo(ammo);
             }
         }
 
-        public void ChangeAmmo(AmmoItemData ammo)
+        public void ChangeAmmo(AmmoItemConfig config)
         {
             if (_pawn.IsDead || _isFiring || _isReloading)
             {
                 return;
             }
             Discharge();
-            _ammoData = ammo;
+            _ammoConfig = config;
             Reload();
         }
 
         public void Discharge()
         {
-            if (_pawn.IsDead || _isFiring || _isReloading || _weaponData == null || _ammoData == null)
+            if (_pawn.IsDead || _isFiring || _isReloading || _weaponConfig == null || _ammoConfig == null)
             {
                 return;
             }
-            if (_weaponData.ConsumeAmmoByReload && _ammoInMag > 0)
+            if (_weaponConfig.ConsumeAmmoByReload && _ammoInMag > 0)
             {
-                _pawn.PawnInventory.AddItem(_ammoData, _ammoInMag);
+                _pawn.PawnInventory.AddItem(_ammoConfig, _ammoInMag);
             }
-            _ammoData = null;
+            _ammoConfig = null;
             _ammoInMag = 0;
         }
     }

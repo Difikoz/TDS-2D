@@ -29,13 +29,13 @@ namespace WinterUniverse
             _pawn.OnDeath -= DropWeapon;
         }
 
-        public void EquipWeapon(WeaponItemData data, bool removeNewFromInventory = true, bool addOldToInventory = true)
+        public void EquipWeapon(WeaponItemConfig data, bool removeNewFromInventory = true, bool addOldToInventory = true)
         {
             if (removeNewFromInventory)
             {
                 //remove new
             }
-            if (_weaponSlot.WeaponData != null)
+            if (_weaponSlot.WeaponConfig != null)
             {
                 if (addOldToInventory)
                 {
@@ -50,7 +50,7 @@ namespace WinterUniverse
 
         public void UnequipWeapon(bool addOldToInventory)
         {
-            if (_weaponSlot.WeaponData != null)
+            if (_weaponSlot.WeaponConfig != null)
             {
                 if (addOldToInventory)
                 {
@@ -64,7 +64,7 @@ namespace WinterUniverse
 
         public void DropWeapon()
         {
-            if (_weaponSlot.WeaponData != null)
+            if (_weaponSlot.WeaponConfig != null)
             {
                 //remove stats
                 //drop
@@ -74,13 +74,13 @@ namespace WinterUniverse
             }
         }
 
-        public void EquipArmor(ArmorItemData data, bool removeOldFromInventory = true, bool addOldToInventory = true)
+        public void EquipArmor(ArmorItemConfig data, bool removeOldFromInventory = true, bool addOldToInventory = true)
         {
             if (removeOldFromInventory)
             {
                 //remove new
             }
-            if (_armorSlot.Data != null)
+            if (_armorSlot.Config != null)
             {
                 if (addOldToInventory)
                 {
@@ -95,7 +95,7 @@ namespace WinterUniverse
 
         public void UnequipArmor(bool addOldToInventory = true)
         {
-            if (_armorSlot.Data != null)
+            if (_armorSlot.Config != null)
             {
                 if (addOldToInventory)
                 {

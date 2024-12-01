@@ -4,12 +4,12 @@ namespace WinterUniverse
 {
     public class ItemInteractable : Interactable
     {
-        [SerializeField] private ItemData _item;
+        [SerializeField] private ItemConfig _item;
         [SerializeField] private int _amount = 1;
         [SerializeField] private SpriteRenderer _spriteRenderer;
         [SerializeField] private PolygonCollider2D _collider;
 
-        public void Setup(ItemData item, int amount = 1)
+        public void Setup(ItemConfig item, int amount = 1)
         {
             _item = item;
             _amount = amount;

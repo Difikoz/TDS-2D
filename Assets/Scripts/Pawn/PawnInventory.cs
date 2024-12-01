@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 namespace WinterUniverse
 {
@@ -24,7 +23,7 @@ namespace WinterUniverse
 
         }
 
-        public void AddItem(ItemData item, int amount = 1)
+        public void AddItem(ItemConfig item, int amount = 1)
         {
             foreach (ItemStack stack in _stacks)
             {
@@ -42,7 +41,7 @@ namespace WinterUniverse
             OnInventoryChanged?.Invoke(_stacks);
         }
 
-        public void RemoveItem(ItemData item, int amount = 1)
+        public void RemoveItem(ItemConfig item, int amount = 1)
         {
             foreach (ItemStack stack in _stacks)
             {
@@ -56,14 +55,13 @@ namespace WinterUniverse
                     {
                         _stacks.Remove(stack);
                     }
-                    amount = 0;
                     break;
                 }
             }
             OnInventoryChanged?.Invoke(_stacks);
         }
 
-        public void DropItem(ItemData item, int amount = 1)
+        public void DropItem(ItemConfig item, int amount = 1)
         {
             foreach (ItemStack stack in _stacks)
             {
@@ -78,14 +76,13 @@ namespace WinterUniverse
                         _stacks.Remove(stack);
                     }
                     // spawn item
-                    amount = 0;
                     break;
                 }
             }
             OnInventoryChanged?.Invoke(_stacks);
         }
 
-        public int AmountOfItem(ItemData item)
+        public int AmountOfItem(ItemConfig item)
         {
             int amount = 0;
             foreach (ItemStack stack in _stacks)
@@ -98,7 +95,7 @@ namespace WinterUniverse
             return amount;
         }
 
-        public bool GetWeapon(out WeaponItemData data)
+        public bool GetWeapon(out WeaponItemConfig data)
         {
             data = null;
             int rating = 0;
@@ -106,14 +103,14 @@ namespace WinterUniverse
             {
                 if (stack.Item.ItemType.DisplayName == "Weapon" && stack.Item.Price > rating)
                 {
-                    data = (WeaponItemData)stack.Item;
+                    data = (WeaponItemConfig)stack.Item;
                     rating = data.Price;
                 }
             }
             return data != null;
         }
 
-        public bool GetArmor(out ArmorItemData data)
+        public bool GetArmor(out ArmorItemConfig data)
         {
             data = null;
             int rating = 0;
@@ -121,23 +118,23 @@ namespace WinterUniverse
             {
                 if (stack.Item.ItemType.DisplayName == "Armor" && stack.Item.Price > rating)
                 {
-                    data = (ArmorItemData)stack.Item;
+                    data = (ArmorItemConfig)stack.Item;
                     rating = data.Price;
                 }
             }
             return data != null;
         }
 
-        public bool GetConsumable(ConsumableTypeData type, out ConsumableItemData data)
+        public bool GetConsumable(ConsumableTypeConfig type, out ConsumableItemConfig data)
         {
             data = null;
-            ConsumableItemData tempData;
+            ConsumableItemConfig tempData;
             int rating = 0;
             foreach (ItemStack stack in _stacks)
             {
                 if (stack.Item.ItemType.DisplayName == "Consumable" && stack.Item.Price > rating)
                 {
-                    tempData = (ConsumableItemData)stack.Item;
+                    tempData = (ConsumableItemConfig)stack.Item;
                     if (tempData.ConsumableType == type)
                     {
                         data = tempData;
@@ -148,15 +145,15 @@ namespace WinterUniverse
             return data != null;
         }
 
-        public bool GetAmmo(WeaponItemData weapon, out AmmoItemData ammo)
+        public bool GetAmmo(WeaponItemConfig weapon, out AmmoItemConfig ammo)
         {
             ammo = null;
             int amount = 0;
             foreach (ItemStack stack in _stacks)
             {
-                if (stack.Item.ItemType.DisplayName == "Ammo" && weapon.UsingAmmo.Contains((AmmoItemData)stack.Item) && stack.Amount > amount)
+                if (stack.Item.ItemType.DisplayName == "Ammo" && weapon.UsingAmmo.Contains((AmmoItemConfig)stack.Item) && stack.Amount > amount)
                 {
-                    ammo = (AmmoItemData)stack.Item;
+                    ammo = (AmmoItemConfig)stack.Item;
                     amount = stack.Amount;
                 }
             }
