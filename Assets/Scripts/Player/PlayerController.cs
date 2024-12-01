@@ -38,11 +38,18 @@ namespace WinterUniverse
             _isFiring = value.isPressed;
         }
 
-        protected override void FixedUpdate()
+        public void OnAim(InputValue value)
+        {
+            _isAiming = value.isPressed;
+        }
+
+        public override void OnFixedUpdate()
         {
             _moveDirection = _moveInput;
-            _lookDirection = (Camera.main.ScreenToWorldPoint(_lookInput) - transform.position).normalized;
-            base.FixedUpdate();
+            _aimPosition = Camera.main.ScreenToWorldPoint(_lookInput);
+            //_aimPosition.z = 0f;
+            _lookDirection = (_aimPosition - transform.position).normalized;
+            base.OnFixedUpdate();
         }
     }
 }

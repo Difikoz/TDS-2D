@@ -29,7 +29,9 @@ namespace WinterUniverse
         protected CircleCollider2D _collider;
         protected Vector2 _moveDirection;
         protected Vector2 _lookDirection;
+        protected Vector3 _aimPosition;
         protected bool _isFiring;
+        protected bool _isAiming;
         public bool CanMove = true;
         public bool CanRotate = true;
         public bool IsPerfomingAction;
@@ -49,6 +51,8 @@ namespace WinterUniverse
         public FactionConfig Faction => _faction;
         public Vector2 MoveDirection => _moveDirection;
         public Vector2 LookDirection => _lookDirection;
+        public Vector3 AimPosition => _aimPosition;
+        public bool IsAiming => _isAiming;
         public bool IsRunning => _isRunning;
         public bool IsDead => _isDead;
         public bool Initialized => _initialized;
@@ -118,7 +122,7 @@ namespace WinterUniverse
             _pawnStats.Deinitialize();
         }
 
-        protected virtual void FixedUpdate()
+        public virtual void OnFixedUpdate()
         {
             if (!_initialized)
             {
@@ -148,10 +152,7 @@ namespace WinterUniverse
 
         protected virtual IEnumerator ProcessDeath()
         {
-            yield return new WaitForSeconds(5f);
-            Deinitialize();
             yield return null;
-            Destroy(gameObject);
         }
     }
 }

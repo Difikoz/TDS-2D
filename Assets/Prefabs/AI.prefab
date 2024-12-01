@@ -19,7 +19,6 @@ GameObject:
   - component: {fileID: 6703311462529855456}
   - component: {fileID: 1248940653663982388}
   - component: {fileID: 6699469511059477482}
-  - component: {fileID: 6820892585153082232}
   - component: {fileID: 7533589464111233101}
   m_Layer: 3
   m_Name: AI
@@ -62,10 +61,6 @@ MonoBehaviour:
   CanRotate: 1
   IsPerfomingAction: 0
   IsInvulnerable: 0
-  _acceleration: 8
-  _deceleration: 16
-  _moveSpeed: 4
-  _rotateSpeed: 360
 --- !u!114 &3495654127548460453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,43 +204,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &6820892585153082232
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661904284230524430}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
-  m_Direction: 0
 --- !u!58 &7533589464111233101
 CircleCollider2D:
   m_ObjectHideFlags: 0
