@@ -7,7 +7,6 @@ namespace WinterUniverse
         public override void OnFixedUpdate()
         {
             _lookDirection = (WorldManager.StaticInstance.Player.transform.position - transform.position).normalized;
-            _aimPosition = WorldManager.StaticInstance.Player.transform.position;
             base.OnFixedUpdate();
         }
     }

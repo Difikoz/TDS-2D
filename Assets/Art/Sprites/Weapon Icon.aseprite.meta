@@ -124,7 +124,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Rifle Icon
     originalName: 
-    pivot: {x: 0.125, y: 0.75}
+    pivot: {x: 0.5, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -145,7 +145,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Shotgun Icon
     originalName: 
-    pivot: {x: 0.125, y: 0.72727275}
+    pivot: {x: 0.5, y: 0.72727275}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -166,7 +166,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 24}
   - name: Pistol Icon
     originalName: 
-    pivot: {x: 0.2, y: 0.72727275}
+    pivot: {x: 0.5, y: 0.72727275}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -219,7 +219,7 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 28
+        x: 16
         y: 23
         width: 32
         height: 12
@@ -237,7 +237,7 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 28
+        x: 16
         y: 24
         width: 32
         height: 11
@@ -255,7 +255,7 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 28
+        x: 22
         y: 24
         width: 20
         height: 11

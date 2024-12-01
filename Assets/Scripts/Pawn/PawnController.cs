@@ -29,7 +29,7 @@ namespace WinterUniverse
         protected CircleCollider2D _collider;
         protected Vector2 _moveDirection;
         protected Vector2 _lookDirection;
-        protected Vector3 _aimPosition;
+        protected float _aimMagnitude;
         protected bool _isFiring;
         protected bool _isAiming;
         public bool CanMove = true;
@@ -51,7 +51,7 @@ namespace WinterUniverse
         public FactionConfig Faction => _faction;
         public Vector2 MoveDirection => _moveDirection;
         public Vector2 LookDirection => _lookDirection;
-        public Vector3 AimPosition => _aimPosition;
+        public float AimMagnitude => _aimMagnitude;
         public bool IsAiming => _isAiming;
         public bool IsRunning => _isRunning;
         public bool IsDead => _isDead;

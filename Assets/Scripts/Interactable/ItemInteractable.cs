@@ -7,7 +7,7 @@ namespace WinterUniverse
         [SerializeField] private ItemConfig _item;
         [SerializeField] private int _amount = 1;
         [SerializeField] private SpriteRenderer _spriteRenderer;
-        [SerializeField] private PolygonCollider2D _collider;
+        [SerializeField] private CircleCollider2D _collider;
 
         public void Setup(ItemConfig item, int amount = 1)
         {
@@ -18,7 +18,7 @@ namespace WinterUniverse
             {
                 Destroy(_collider);
             }
-            _collider = gameObject.AddComponent<PolygonCollider2D>();
+            _collider = gameObject.AddComponent<CircleCollider2D>();
             _collider.isTrigger = true;
         }
 

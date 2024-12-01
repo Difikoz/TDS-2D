@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9008195734695981639}
   - component: {fileID: 2585770249234798249}
   - component: {fileID: 1826590346102275931}
-  - component: {fileID: 5188196315851526979}
+  - component: {fileID: 7931154340562225392}
   m_Layer: 6
   m_Name: Item Interactable
   m_TagString: Untagged
@@ -50,7 +50,7 @@ MonoBehaviour:
   _item: {fileID: 11400000, guid: a2deb3a039daae2459a99e25d8aa804c, type: 2}
   _amount: 1
   _spriteRenderer: {fileID: 1826590346102275931}
-  _collider: {fileID: 5188196315851526979}
+  _collider: {fileID: 0}
 --- !u!212 &1826590346102275931
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -95,19 +95,19 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7531406297805789275, guid: 464bbdd73de8700448de2f288404a497, type: 3}
+  m_Sprite: {fileID: -7463464283367061758, guid: ea8f94ffde48f144eb79d14c7ae11d07, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &5188196315851526979
-PolygonCollider2D:
+--- !u!58 &7931154340562225392
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -140,20 +140,5 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.125, y: 0.5}
-    oldSize: {x: 1, y: 0.1875}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.125, y: 0.09375}
-      - {x: -0.125, y: -0.09375}
-      - {x: 0.875, y: -0.09375}
-      - {x: 0.875, y: 0.09375}
-  m_UseDelaunayMesh: 0
+  m_Offset: {x: 0, y: -0.09375}
+  m_Radius: 0.5

@@ -23,7 +23,7 @@ MonoBehaviour:
   _size: 2
   _weight: 2
   _armorType: {fileID: 11400000, guid: 542699aa9ef37fd4eae15b87bc4148a7, type: 2}
-  _equippedSprite: {fileID: 21300000, guid: 66a83d7cb25f3344fa1bb8f5bf1e6963, type: 3}
+  _equippedSprite: {fileID: 21300000, guid: 2aba434d034d5574c9c67420b2975aa2, type: 3}
   _modifiers:
   - _stat: {fileID: 11400000, guid: 424cfdb0cbd781f4d8d363732d25b42f, type: 2}
     _modifier:

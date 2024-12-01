@@ -9,6 +9,7 @@ namespace WinterUniverse
         private Vector3 _aimOffset;
 
         [SerializeField] private float _followSpeed = 10f;
+        [SerializeField] private float _aimSpeed = 5f;
 
         public void Initialize(Transform target)
         {
@@ -19,7 +20,7 @@ namespace WinterUniverse
         public void Initialize(PawnController pawn)
         {
             _pawn = pawn;
-            _target = null;
+            _target = _pawn.transform;
         }
 
         public void OnLateUpdate()
@@ -28,17 +29,17 @@ namespace WinterUniverse
             {
                 transform.position = Vector3.Lerp(transform.position, _target.position, _followSpeed * Time.deltaTime);
             }
-            else if (_pawn != null)
+            if (_pawn != null)
             {
                 if (_pawn.IsAiming && _pawn.PawnEquipment.WeaponSlot.WeaponConfig != null)
                 {
-                    _aimOffset = _pawn.transform.right * Mathf.InverseLerp(0f, _pawn.PawnEquipment.WeaponSlot.WeaponConfig.Range, Vector3.Distance(_pawn.transform.position, _pawn.AimPosition)) * _pawn.PawnEquipment.WeaponSlot.WeaponConfig.Range;
+                    _aimOffset = _pawn.transform.right * _pawn.AimMagnitude * _pawn.PawnEquipment.WeaponSlot.WeaponConfig.Range;
+                    transform.position = Vector3.Lerp(transform.position, _pawn.transform.position + _aimOffset, _aimSpeed * Time.deltaTime);
                 }
                 else
                 {
-                    _aimOffset = _pawn.transform.right;
+                    transform.position = Vector3.Lerp(transform.position, _pawn.transform.position, _followSpeed * Time.deltaTime);
                 }
-                transform.position = Vector3.Lerp(transform.position, _pawn.transform.position + _aimOffset, _followSpeed * Time.deltaTime);
             }
         }
     }

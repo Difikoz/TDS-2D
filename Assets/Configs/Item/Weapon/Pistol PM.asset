@@ -10,26 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d73bfcc9c829e94eae5df665ad3326b, type: 3}
-  m_Name: Rifle AK-74
+  m_Name: Pistol PM
   m_EditorClassIdentifier: 
-  _displayName: AK-74
+  _displayName: PM
   _description: Description
-  _rarity: {fileID: 11400000, guid: 264b951bfb8d43948a67ee3f27809120, type: 2}
+  _rarity: {fileID: 11400000, guid: d4043a874eac7d749afde86eccd381ef, type: 2}
   _itemType: {fileID: 11400000, guid: eb80e55bb7906544786ae967581d307a, type: 2}
-  _iconSprite: {fileID: -7463464283367061758, guid: ea8f94ffde48f144eb79d14c7ae11d07, type: 3}
-  _lootSprite: {fileID: -7463464283367061758, guid: ea8f94ffde48f144eb79d14c7ae11d07, type: 3}
+  _iconSprite: {fileID: 1859576998062651879, guid: ea8f94ffde48f144eb79d14c7ae11d07, type: 3}
+  _lootSprite: {fileID: 1859576998062651879, guid: ea8f94ffde48f144eb79d14c7ae11d07, type: 3}
   _usableFromGround: 1
   _price: 500
-  _size: 2
-  _weight: 2
-  _weaponType: {fileID: 11400000, guid: ced724ddafb9e6c47bb5bc1f504c9d99, type: 2}
-  _equippedSprite: {fileID: 1841605664742501884, guid: 464bbdd73de8700448de2f288404a497, type: 3}
+  _size: 1
+  _weight: 1
+  _weaponType: {fileID: 11400000, guid: 48b91890786fe4d46812a419ce573233, type: 2}
+  _equippedSprite: {fileID: 7053592936690841298, guid: 464bbdd73de8700448de2f288404a497, type: 3}
   _shootPointOffset: {x: 0.8, y: 0, z: 0}
   _element: {fileID: 11400000, guid: 91c8b41ecaac83a4f9efb6453bbb5692, type: 2}
   _damage: 5
-  _fireRate: 600
-  _range: 50
-  _reloadTime: 2
+  _fireRate: 150
+  _range: 25
+  _reloadTime: 1
   _consumeAmmoByShot: 1
   _consumeAmmoByProjectile: 0
   _consumeAmmoByReload: 1
@@ -37,7 +37,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5fed5dd7487abaa45b9240d67744d51d, type: 2}
   - {fileID: 11400000, guid: f8657cbc8f546cc49882e556da0d9906, type: 2}
   - {fileID: 11400000, guid: 77120b1bfc6cee342809610624387a2f, type: 2}
-  _magSize: 30
+  _magSize: 8
   _projectilePerShot: 1
   _projectileDelay: 0
   _projectileForce: 25
@@ -47,4 +47,4 @@ MonoBehaviour:
   - _stat: {fileID: 11400000, guid: 424cfdb0cbd781f4d8d363732d25b42f, type: 2}
     _modifier:
       _type: 1
-      _value: -10
+      _value: 25

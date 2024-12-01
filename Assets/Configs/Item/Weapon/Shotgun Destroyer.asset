@@ -27,8 +27,8 @@ MonoBehaviour:
   _shootPointOffset: {x: 0.8, y: 0, z: 0}
   _element: {fileID: 11400000, guid: 91c8b41ecaac83a4f9efb6453bbb5692, type: 2}
   _damage: 5
-  _fireRate: 60
-  _range: 5
+  _fireRate: 100
+  _range: 10
   _reloadTime: 2
   _consumeAmmoByShot: 1
   _consumeAmmoByProjectile: 0
@@ -42,7 +42,7 @@ MonoBehaviour:
   _projectileDelay: 0
   _projectileForce: 25
   _projectileKnockback: 0.5
-  _projectileSpread: 30
+  _projectileSpread: 15
   _modifiers:
   - _stat: {fileID: 11400000, guid: 424cfdb0cbd781f4d8d363732d25b42f, type: 2}
     _modifier:

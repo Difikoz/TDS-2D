@@ -46,9 +46,8 @@ namespace WinterUniverse
         public override void OnFixedUpdate()
         {
             _moveDirection = _moveInput;
-            _aimPosition = Camera.main.ScreenToWorldPoint(_lookInput);
-            //_aimPosition.z = 0f;
-            _lookDirection = (_aimPosition - transform.position).normalized;
+            _lookDirection = (Camera.main.ScreenToWorldPoint(_lookInput) - transform.position).normalized;
+            _aimMagnitude = Mathf.InverseLerp(0f, 1f, Vector2.Distance(WorldManager.StaticInstance.UIManager.ScreenResolution / 2f, _lookInput) / WorldManager.StaticInstance.UIManager.ScreenResolution.magnitude);
             base.OnFixedUpdate();
         }
     }
